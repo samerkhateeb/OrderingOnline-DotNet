@@ -1,0 +1,163 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_DynamicsLoad_DynamicsPreview : System.Web.UI.Page
+{
+
+    string tableType;
+    DataSet SubpageContainerDataSet = new DataSet();
+    DataRow row;
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+           
+                try
+                {
+
+                    //Portals_MasterPage masterPage = (Portals_MasterPage)Page.Master;
+
+                    //masterPage.WeatherHide();
+                    // decode url
+                   // Global_BLL.DecodeUrl(Request.QueryString["info"]);
+
+
+                    // Init MasterPage
+                    Portals_MasterPage masterPage = (Portals_MasterPage)Page.Master;
+
+                    if (!String.IsNullOrEmpty(Request.QueryString["info"]))
+                        Global_BLL.DecodeUrlStatic(Request.QueryString["info"]);
+
+
+                    // request data from database according to page type and id
+                    DataSet dataSet = Control_BLL.ControlSelect(QueryString_Info.DynamicID, QueryString_Info.Language);
+
+                   
+
+                    //foreach (DataTable dataTable in dataSet.Tables)
+                    //{
+                    //    // get table type
+                    //    tableType = DataTableType(dataTable);
+
+                    //    // check if table is empty or not
+                    //    if (row[0].ToString().ToLower() == "empty")
+                    //    {
+                    //        continue;
+                    //    }
+
+                    //    switch (tableType.ToLower())
+                    //    {
+                    //        //Init  Dynamic Control
+                    //        case "control":
+                    //            {
+                    //                //Control UC = LoadControl(String.Format("../Controls/{0}", dataTable.Rows[0]["Control_StaticLink"]));
+                    //                //ControlPanel.Controls.Add(UC);
+                    //                break;
+                    //            }
+
+                    //        case "banner":
+                    //            {
+                    //                // bind banners
+                    //                // Check Banners Status
+                    //                if (dataTable.Rows.Count != 0)
+                    //                {
+                    //                    foreach (DataRow bannerRow in dataTable.Rows)
+                    //                    {
+
+                    //                        if (!String.IsNullOrEmpty(bannerRow["BannerTop"].ToString()))
+                    //                        {
+                    //                            masterPage.BannerTopDataContent = bannerRow["BannerTop"].ToString();
+                    //                        }
+                    //                        else
+                    //                            if (String.IsNullOrEmpty(bannerRow["BannerTop"].ToString())) // this because top banner shouldnot become null
+                    //                            {
+                    //                                masterPage.BannerTopDataContent = "<img src='" + ConfigurationManager.AppSettings["BannerTopDefault"].ToString() + "' />";
+                    //                            }
+
+                    //                        if (!String.IsNullOrEmpty(bannerRow["BannerSubPage"].ToString()))
+                    //                        {
+                    //                            UC_BannerSubPage.DataContent = bannerRow["BannerSubPage"].ToString();
+                    //                        }
+
+                    //                    }
+                    //                }
+                    //                break;
+                    //            }
+                    //        case "menu":
+                    //            {
+                    //                DataView MenuDataView = new DataView(dataTable);
+                    //                MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 1";
+
+                    //                masterPage.MenuTopDataContent = MenuDataView;
+
+                    //                MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 2";
+                    //                masterPage.MenuBottomDataContent = MenuDataView;
+                    //                break;
+                    //            }
+
+                    //        //Init  Left Container (SubPage Container)
+                    //        case "containersubpage":
+                    //            {
+                    //                SubpageContainerDataSet.Tables.Add(dataTable.Copy());
+                    //                break;
+                    //            }
+                           
+                           
+                    //    }
+                    //}
+
+                    //// init Left Container Column
+                    //if (SubpageContainerDataSet.Tables.Count != 0)
+                    //    UC_LeftContainerControl.DataContent = SubpageContainerDataSet;
+                    //else
+                    //    HideControl(UC_LeftContainerControl);
+
+
+                    masterPage.StaticContent(dataSet);
+
+                    Page.Title = String.Format("{0} :: نموذج الاتصال", ConfigurationManager.AppSettings["PagesTitle"]);
+
+
+
+                    //// Init Page Date
+                    //masterPage.HeaderDate = DateTime.Now;
+                }
+
+                catch (Exception exc)
+                {
+                    Global_BLL.FireException(this, exc.Message);
+                }
+
+            }
+
+    }
+
+
+    public string DataTableType(DataTable dataTable)
+    {
+        row = dataTable.Rows[0];
+        return row["TableType"].ToString();
+    }
+
+
+
+    public void HideControl(Control control)
+    {
+        control.Visible = false;
+    }
+
+
+}

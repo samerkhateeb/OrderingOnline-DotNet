@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\SamerComputer\Work\shoppiing\Web\wwwroot\Modules\Banner" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Banner.pdb" publishTime="05/22/2012 15:17:35" />
+    <file relUrl="Banner.ascx" publishTime="05/22/2012 15:17:35" />
+    <file relUrl="bin/Banner.dll" publishTime="05/22/2012 15:17:35" />
+  </publishProfile>
+</publishData>

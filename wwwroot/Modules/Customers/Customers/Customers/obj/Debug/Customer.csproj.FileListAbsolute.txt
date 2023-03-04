@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\bin\Customer.dll
+\Web\wwwroot\bin\Customer.pdb
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\Customer.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\Customer.pdb
+\Web\wwwroot\bin\Customer.dll
+\Web\wwwroot\bin\Customer.pdb
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\Customer.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers\obj\Debug\Customer.pdb

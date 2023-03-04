@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\Groups\Groups\Groups\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Groups\Groups\Groups\bin\Groups.dll
+\Web\wwwroot\Modules\Groups\Groups\Groups\bin\Groups.pdb
+\Web\wwwroot\Modules\Groups\Groups\Groups\bin\KFGCMS.BLL.dll
+\Web\wwwroot\Modules\Groups\Groups\Groups\bin\Microsoft.ApplicationBlocks.Data.dll
+\Web\wwwroot\Modules\Groups\Groups\Groups\bin\KFGCMS.BLL.pdb
+\Web\wwwroot\Modules\Groups\Groups\Groups\obj\Debug\Groups.dll
+\Web\wwwroot\Modules\Groups\Groups\Groups\obj\Debug\Groups.pdb
+\Web\wwwroot\bin\Groups.dll
+\Web\wwwroot\bin\Groups.pdb

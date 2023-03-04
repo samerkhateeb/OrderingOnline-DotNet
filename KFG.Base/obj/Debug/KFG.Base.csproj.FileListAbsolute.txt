@@ -1,0 +1,5 @@
+\Web\KFG.Base\bin\Debug\KFG.Base.dll
+\Web\KFG.Base\bin\Debug\KFG.Base.pdb
+\Web\KFG.Base\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.Base\obj\Debug\KFG.Base.dll
+\Web\KFG.Base\obj\Debug\KFG.Base.pdb

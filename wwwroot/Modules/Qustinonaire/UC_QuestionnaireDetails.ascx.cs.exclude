@@ -1,0 +1,215 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using KFGCMS.BLL;
+using System.Configuration;
+
+public partial class Portals_Controls_UC_QuestionnaireDetails : System.Web.UI.UserControl
+{
+    public event EventHandler HideQuestionnaireDetails;
+
+    public DataTable DataContent
+    {           
+
+
+        set
+        {
+            
+            
+                string EmptyText = "";
+
+                DataTable MasterDataTable = value;
+
+                EmptyText = Site_Info.QuestionnaireGridViewEmptyText;
+
+
+
+                HeaderHyperLink.Text = Site_Info.Questionnaire_Header;
+                HeaderHyperLink.NavigateUrl = String.Format("{0}/Portals/Questionnaire/?Info={1}", ConfigurationManager.AppSettings["PortalAlias"], Request.QueryString["Info"]);
+                HeaderHyperLink.DataBind();
+
+
+            if (value.Rows.Count != 0)
+            {
+
+                int questionType;
+                RadioButtonList AnswersRadioButtonList;
+                CheckBoxList AnswersCheckBoxList;
+                DataView dataView = value.DefaultView;
+                HiddenField TypeHiddenField, AnswerIDHiddenField;
+                dataView.Sort = "QQuestion_Sorting desc";
+                DataTable QuestionsDataTable = dataView.ToTable(true, "QQuestion_ID", "QQuestion_Name", "Type");
+
+                RequiredFieldValidator Validation;
+
+                HeaderLabel.Text = MasterDataTable.Rows[0]["Questionnaire_Name"].ToString();
+                HeaderLabel.DataBind();
+
+                QuestionnaireDetailsGridView.DataSource = QuestionsDataTable;
+
+                QuestionnaireDetailsGridView.EmptyDataText = EmptyText;
+                QuestionnaireDetailsGridView.DataBind();
+
+               
+
+                foreach (GridViewRow GridRow in QuestionnaireDetailsGridView.Rows)
+                {
+                    dataView.RowFilter = "QQuestion_ID = " + QuestionsDataTable.Rows[GridRow.RowIndex]["QQuestion_ID"];
+
+                    questionType = Convert.ToInt32(dataView.ToTable().Rows[0]["Type"]);
+                    TypeHiddenField = GridRow.FindControl("TypeHiddenField") as HiddenField;
+
+                    
+
+                    //AnswerIDHiddenField = GridRow.FindControl("AnswerIDHiddenField") as HiddenField;
+                    //AnswerIDHiddenField.Value = MasterDataTable.Rows[GridRow.RowIndex]["QAnswer_ID"].ToString();
+
+                    if (questionType == 1) // radiobutton list type
+                    {
+                        AnswersRadioButtonList = GridRow.FindControl("AnswersRadioButtonList") as RadioButtonList;
+                        TypeHiddenField.Value = "1";
+                        AnswersRadioButtonList.DataSource = dataView;
+                        AnswersRadioButtonList.DataTextField = "QAnswer_Name";
+                        AnswersRadioButtonList.DataValueField = "QAnswer_ID";
+                        AnswersRadioButtonList.ValidationGroup = "QuestionnaireGroup" ;
+
+                        AnswersRadioButtonList.DataBind();
+
+                        Validation = GridRow.FindControl("QuestionRequiredFieldValidator") as RequiredFieldValidator;
+                        Validation.ValidationGroup = "QuestionnaireGroup";
+                        Validation.ControlToValidate = AnswersRadioButtonList.ID;
+                    }
+
+                    else // 2 checkbox list type
+                    {
+                        TypeHiddenField.Value = "2";
+                        AnswersCheckBoxList = GridRow.FindControl("AnswersCheckBoxList") as CheckBoxList;
+                        AnswersCheckBoxList.DataSource = dataView;
+                        AnswersCheckBoxList.DataTextField = "QAnswer_Name";
+                        AnswersCheckBoxList.DataValueField = "QAnswer_ID";
+
+                        AnswersCheckBoxList.ValidationGroup = "QuestionnaireGroup";
+
+                        AnswersCheckBoxList.DataBind();
+
+                        //Validation.ControlToValidate = AnswersCheckBoxList.ID;
+                    }
+
+                }
+              
+            } 
+            else
+                {
+                    QuestionnaireDetailsGridView.EmptyDataText = EmptyText;
+                    QuestionnaireDetailsGridView.DataBind();
+                    SubmitLinkButton.Visible = false;
+                }
+
+        }
+    }
+
+
+    protected void SubmitLinkButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+          //  System.Threading.Thread.Sleep(1000);
+
+            List<QuestionnaireDetails_Info> QuestionnaireDetailsList = new List<QuestionnaireDetails_Info>();
+            QuestionnaireDetails_Info QuestionnaireDetailsInfo;
+            HiddenField TypeHiddenField, AnswerIDHiddenField;
+            RadioButtonList AnswersRadioButtonList;
+            CheckBoxList AnswersCheckBoxList;
+            string  answersText = "", answersValue = "";
+
+            HttpCookie cookie = Request.Cookies["CourseUser"];
+            if (cookie != null)
+            {
+
+                foreach (GridViewRow GridRow in QuestionnaireDetailsGridView.Rows)
+                {
+                    QuestionnaireDetailsInfo = new QuestionnaireDetails_Info();
+
+                    TypeHiddenField = GridRow.FindControl("TypeHiddenField") as HiddenField;
+                    AnswerIDHiddenField = GridRow.FindControl("AnswerIDHiddenField") as HiddenField;
+
+                    QuestionnaireDetailsInfo.QuestionnaireID = Convert.ToInt32(QueryString_Info.QuestionnaireID);
+                    QuestionnaireDetailsInfo.QuestionID = Convert.ToInt32(QuestionnaireDetailsGridView.DataKeys[GridRow.RowIndex][0]);
+                    QuestionnaireDetailsInfo.UserID = Convert.ToInt32(cookie["Course_UserID"]);
+                    QuestionnaireDetailsInfo.QuestionnaireStatus = false;
+                    QuestionnaireDetailsInfo.QuestionType = Convert.ToInt32(TypeHiddenField.Value);
+                    //QuestionnaireDetailsInfo.AnswerID = Convert.ToInt32(AnswerIDHiddenField.Value);
+
+                    if (QuestionnaireDetailsInfo.QuestionType == 1) // radioButtonList type
+                    {
+                        AnswersRadioButtonList = GridRow.FindControl("AnswersRadioButtonList") as RadioButtonList;
+                        answersValue = AnswersRadioButtonList.SelectedValue;
+                        answersText = AnswersRadioButtonList.SelectedItem.Text;
+                    }
+
+                    else// 2 CheckBoxList type
+                    {
+                        AnswersCheckBoxList = GridRow.FindControl("AnswersCheckBoxList") as CheckBoxList;
+
+                        foreach (ListItem item in AnswersCheckBoxList.Items)
+                        {
+                            answersText = answersText + item.Text + ",";
+                            answersValue = answersValue + item.Value + ",";
+                        }
+
+                        //answersValue = checkBoxListIDsValues;
+                    }
+
+                   // answersVariable = answersVariable.TrimEnd(',');
+
+                    QuestionnaireDetailsInfo.AnswerVariable = answersText.TrimEnd(',');
+                    QuestionnaireDetailsInfo.AnswerIDs = answersValue.TrimEnd(',');
+                    QuestionnaireDetailsList.Add(QuestionnaireDetailsInfo);
+
+                } 
+                
+                QuestionnaireDetails_Bridge.Insert(QuestionnaireDetailsList); 
+                HideShowControls();
+            }
+
+
+           
+
+
+
+          //  HideQuestionnaireDetails(new object(), new EventArgs());
+
+
+           
+        }
+
+        catch (Exception exc)
+        {
+            ExceptionsLog_BLL.SaveException(exc, "Portal.UI", this.GetType().Name);
+        }
+
+
+    }
+
+
+    public void HideShowControls()
+    {
+
+        ThanksLabel.Text = Site_Info.QuestionnaireResultLabel;
+        ThanksLabel.Visible = true;
+        
+        QuestionnaireDetailsGridView.Visible = false;
+        
+        SubmitLinkButton.Visible = false;
+
+        this.DataBind();
+
+    }
+
+
+
+}

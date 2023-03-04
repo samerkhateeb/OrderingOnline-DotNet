@@ -1,0 +1,5 @@
+\Web\wwwroot\Modules\Content\Content\Content\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\bin\Content.dll
+\Web\wwwroot\bin\Content.pdb
+\Web\wwwroot\Modules\Content\Content\Content\obj\Debug\Content.dll
+\Web\wwwroot\Modules\Content\Content\Content\obj\Debug\Content.pdb

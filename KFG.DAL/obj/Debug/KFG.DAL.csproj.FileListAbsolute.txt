@@ -1,0 +1,5 @@
+\Web\KFG.DAL\bin\Debug\PlexDAL.dll
+\Web\KFG.DAL\bin\Debug\PlexDAL.pdb
+\Web\KFG.DAL\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.DAL\obj\Debug\PlexDAL.dll
+\Web\KFG.DAL\obj\Debug\PlexDAL.pdb

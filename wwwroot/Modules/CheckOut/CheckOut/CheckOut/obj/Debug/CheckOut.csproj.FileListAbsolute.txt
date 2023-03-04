@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\bin\CheckOut.dll
+\Web\wwwroot\bin\CheckOut.pdb
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\CheckOut.dll
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\CheckOut.pdb
+\Web\wwwroot\bin\CheckOut.dll
+\Web\wwwroot\bin\CheckOut.pdb
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\CheckOut.dll
+\Web\wwwroot\Modules\CheckOut\CheckOut\CheckOut\obj\Debug\CheckOut.pdb

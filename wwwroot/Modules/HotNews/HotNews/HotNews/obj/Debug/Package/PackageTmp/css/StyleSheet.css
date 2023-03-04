@@ -1,0 +1,339 @@
+﻿
+/*******************************
+	Hot News 
+*******************************/
+.HotNews_Div
+{
+	width: 850px;
+	height: 380px;
+	margin: 0px 0 10px 0;
+	position: relative;
+	border: solid 0px #e6e6e6;
+	padding: 0px;
+	z-index:0;
+	overflow:hidden;
+}
+
+.HotNewsContent
+{
+    width:auto;
+    height:auto;
+    position:relative;
+}
+
+.HotNews_HeaderDiv
+{
+	border: #B2B2B2 solid 0px;
+	background-position: center bottom;
+	padding: 5px 0px 0px 0px;
+	width: 380px;
+	height: 31px;
+	text-align: right;
+	vertical-align: middle;
+	background: #FFFFFF url('CssImages/All.gif') no-repeat -576px -257px;
+}
+
+.HotNews_HeaderLabel
+{
+	font-family: Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333333;
+	margin:0px 10px 0;
+	direction:ltr;
+}
+
+.HotNewsContent_TextBG
+{
+	margin:0px 0px 0 0;
+	background-color: #fff;
+	/*filter:alpha(opacity=80);
+	opacity:0.8;*/
+	background:url('../images/HotNews_LeftBG.gif') no-repeat top right;
+	width:240px;
+	height:340px;
+	position:absolute;
+	top: 0px;
+	left:0px;
+	padding:0;
+}
+
+
+/* Container for Link and Description*/
+
+.HotNewsContent_TextContainer
+{
+	top: 00px;
+	position:absolute;
+	vertical-align:top;
+	padding:0 10px 0 0;
+	margin:0px;	
+	height:auto;
+	width:240px;
+}
+
+.HotNewsContent_TextLink
+{
+	top:0px;
+	margin:0 2px 0 5px;
+	direction:ltr;
+}
+
+.HotNewsContent_TextLink_H1
+{
+	color:#b77672;
+	font:normal 35px Helvetica, serif;
+	text-decoration:none;
+	
+}
+
+.HotNewsContent_TextLink_H1:hover
+{
+	text-decoration:underline;
+}
+
+
+.HotNewsContent_TextLink a
+{
+	color: #fff;
+	text-align: left;
+	direction: ltr;
+	text-decoration:none;
+}
+
+.HotNewsContent_TextLink a:hover
+{
+	text-decoration:underline;
+}
+
+.HotNewsContent_DescriptionDiv
+{
+	vertical-align:top;
+	position: relative;
+	margin:0 5px 0 5px;
+	font:normal 20px/1.7 Trebuchet MS, Helvetica, serif;
+	direction:ltr;
+	text-align:left;
+}
+
+.HotNewsContent_DescriptionText
+{
+	margin: 0px;
+	padding: 0px;
+	color:#B77672;
+	
+}
+
+/*******************************
+	End Hot News 
+*******************************/
+
+
+
+/********************************
+	JCarousel Page
+********************************/
+
+UL LI {
+	PADDING-RIGHT: 2px 2px 2px 12px; 
+	MARGIN: 1px 2px; 
+	LIST-STYLE-TYPE: none;	
+}
+.jcarousel-container {
+	POSITION: relative;
+	/*width:400px;
+	height:400px;*/
+	overflow:hidden;
+	display:block;
+}
+.jcarousel-clip
+{
+	padding: 0px;
+	z-index: 2;
+	margin: 0px 0px 0px 0px;
+	overflow: hidden;
+	position: relative;
+	direction: ltr;
+	width: 850px;
+	height: auto;
+	
+}
+
+.jcarousel-list
+{
+	padding: 0px;
+	margin: 0px;
+	z-index: 1;
+	left: 0px;
+	position: relative;
+	top: 0px;
+}
+/* width of item ... VIP*/
+.jcarousel-list LI
+{
+	padding: 0px;
+	margin: 0px 0px;
+	float: left;
+	width: 850px;
+	list-style-type: none;
+	height: 380px;
+}
+.jcarousel-item {
+	FLOAT: left; WIDTH: 920px; LIST-STYLE-TYPE: none; HEIGHT: 340px; 
+}
+.jcarousel-next {
+	DISPLAY: none; Z-INDEX: 3;
+}
+.jcarousel-prev {
+	DISPLAY: none; Z-INDEX: 3
+}
+
+/********************************
+	JCarousel Page
+********************************/
+
+
+/********************************
+	music lounge
+********************************/
+
+.jcarousel-container {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px 0px 1px; 
+	WIDTH: 850px; 
+	PADDING-TOP: 0px; 
+	HEIGHT: 380px
+}
+
+.jcarousel-clip
+{
+	width: 850px;
+	height: 380px;
+	margin:0 5px 0 0;
+}
+
+.jcarousel-list {
+	WIDTH: 850px; HEIGHT:380px
+}
+
+.jcarousel-list LI {
+	WIDTH: 850px; HEIGHT: 380px;
+	position:relative;
+}
+
+.jcarousel-item-placeholder {
+	
+}
+
+P.imgCaption 
+{
+	DISPLAY: block; 
+	FONT-SIZE: 12px; 
+	MARGIN: 4px 0px 0px 150px; 
+	WIDTH: 400px; 
+	COLOR: #111; 
+	FONT-FAMILY: Trebuchet MS; 
+	HEIGHT: 30px
+}
+
+P.imgCaption STRONG {
+	DISPLAY: block; FONT-WEIGHT: 700; FONT-SIZE: 16px
+}
+
+/* Controls Box */
+.carouselControlsWrapper
+ {
+	Z-INDEX: 5;
+	padding:5px 0 0 0px;
+	WIDTH: auto;
+	HEIGHT: 17px;
+	POSITION: absolute;
+	top: 0px; 
+	left:0px;
+	direction:ltr;
+	width:260px;
+	height:22px;
+	background:#333;
+}
+
+#carouselPrev {
+	
+	display: block; 
+	width: 100px; 
+	height:380px;
+	text-indent: -9999px;
+	text-decoration:none;
+	position:absolute;
+	top: 0px;
+	left:00px;
+	z-index:100;
+	background:url('../images/Left_arrow.png') no-repeat 0px center;
+    	
+}
+#carouselPrev:hover {
+	background:url('../images/Left_arrow.png') no-repeat -100px center;
+}
+
+#carouselNext
+{
+    display: block; 
+	width: 100px; 
+	height:380px;
+	text-indent: -9999px;
+	text-decoration:none;
+	position:absolute;
+	top: 00px;
+	left:750px;
+	z-index:100;
+	background:url('../images/Right_arrow.png') no-repeat 0px center;
+}
+
+#carouselNext:hover
+{
+	background:url('../images/Right_arrow.png') no-repeat -100px center ;
+}
+
+UL.carouselControls {
+	PADDING:0px;
+	Z-INDEX: 10; 
+	FLOAT: left; 
+	MARGIN: 1px 5px; 
+	POSITION: relative;
+	text-decoration:none;
+}
+
+UL.carouselControls LI
+{
+	padding: 0px;
+	float: left;
+	text-decoration:none;
+}
+UL.carouselControls LI A
+{
+	padding: 0px;
+	margin: 0px 10px;
+	display: block;
+	background: url('../images/navdots.png') no-repeat top right; 
+	overflow:hidden;
+	width: 9px;
+	height: 9px;
+	text-indent: -9999px;
+	text-decoration:none;
+	border:0px;
+}
+
+UL.carouselControls LI A.active {
+	BACKGROUND-POSITION: 0px -9px;
+	text-decoration:none;
+}
+UL.carouselControls LI A:hover {
+	BACKGROUND-POSITION: 0px -9px;
+	text-decoration:none;
+}
+
+
+/********************************
+	end music lounge
+********************************/

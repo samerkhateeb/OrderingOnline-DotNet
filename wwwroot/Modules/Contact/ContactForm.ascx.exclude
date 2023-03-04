@@ -1,0 +1,103 @@
+﻿zZ<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContactForm.ascx.cs" Inherits="Portals_Controls_ContactForm" %>
+
+<%@ Register assembly="WYSIWYGEditor" namespace="InnovaStudio" tagprefix="Plex" %>
+ 
+<div class="BodyContainer">
+
+ <asp:UpdatePanel ID="UpdatePanel" runat="server">
+        <ContentTemplate>
+
+<div class="PageHeaderDiv FloatRight">
+    <asp:Label ID="Label5" runat="server" CssClass="Container_Mid_Header_Label FloatRight" SkinID="NoSkin" Text="نموذج الاتصال"></asp:Label>
+</div>
+<br class="ClearBoth" />
+<div class="PageBody"> 
+<div class="">
+<asp:Label ID="NameLabel" runat="server" Text="Full Name" SkinID="NoSkin" CssClass="LabelForm FloatRight" 
+        AssociatedControlID="NameTextBox"></asp:Label>
+        <div class="FloatRight">
+            <asp:TextBox ID="NameTextBox" runat="server" Width="250px" ValidationGroup="Contact"></asp:TextBox>
+        </div>
+        
+        <div class="FloatRight">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="NameTextBox" ErrorMessage="*" 
+                ForeColor="" ValidationGroup="Contact" Display="Dynamic"></asp:RequiredFieldValidator>
+        </div>
+      
+</div>
+
+<br class="ClearBoth" />
+<div class="">
+<asp:Label ID="EmailLabel" runat="server" Text="Email" 
+        SkinID="NoSkin" CssClass="LabelForm FloatRight"  AssociatedControlID="EmailTextBox"></asp:Label>
+        <div class="FloatRight">
+            <asp:TextBox ID="EmailTextBox" runat="server" Width="250px" ValidationGroup="Contact"></asp:TextBox>
+        </div>
+    <div class="FloatRight">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+            ControlToValidate="EmailTextBox" 
+            ErrorMessage="*" ForeColor="" Display="Dynamic" 
+            ValidationGroup="Contact"></asp:RequiredFieldValidator>
+    </div>
+        <div class="FloatRight MarginLeft10">
+            <asp:RegularExpressionValidator ID="EmailRegularExpressionValidator" runat="server" 
+                ControlToValidate="EmailTextBox" 
+                ErrorMessage="Please Enter Your Email Correctly" ForeColor="" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                ValidationGroup="Contact" Display="Dynamic"></asp:RegularExpressionValidator>
+        </div>
+        
+</div>
+
+<br class="ClearBoth" />
+<div class="">
+<asp:Label ID="DepartmentLabel" runat="server" Text="Department" SkinID="NoSkin" CssClass="LabelForm FloatRight" 
+        AssociatedControlID="SideDropDownList"></asp:Label>
+    <asp:DropDownList ID="SideDropDownList" runat="server" Width="250px" 
+        ValidationGroup="Contact">
+        <asp:ListItem>-- إختر القسم --</asp:ListItem>
+        <asp:ListItem>الهيئة الادارية</asp:ListItem>
+        <asp:ListItem>الدعم الفني</asp:ListItem>
+        <asp:ListItem>قسم التعليقات</asp:ListItem>
+    </asp:DropDownList>
+</div>
+
+<br class="ClearBoth" />
+<div class="FoatLeft">
+    <asp:Label ID="MessageLabel" runat="server" CssClass="LabelForm FloatRight" 
+        Text="Message"></asp:Label>
+    <asp:TextBox ID="CommentEditor" TextMode="MultiLine" runat="server" SkinID="NoSkin" CssClass="TextBox FloatRight"
+        Height="144px" Width="279px" ValidationGroup="Contact"></asp:TextBox>
+    
+<br class="ClearBoth" />
+</div>
+
+    <asp:RequiredFieldValidator ID="MessageRequiredFieldValidator" runat="server" 
+        ControlToValidate="CommentEditor" ErrorMessage="Message Are Required" 
+        ForeColor="" ValidationGroup="Contact"></asp:RequiredFieldValidator>
+    <%--<Plex:WYSIWYGEditor ID="CommentEditor" AssetManager="../../assetmanager/assetmanager.asp" runat="server" >
+    </Plex:WYSIWYGEditor>--%>
+    <br class="ClearBoth" />
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+        <ProgressTemplate>
+            <asp:Image ID="LoadingImage" runat="server" 
+                ImageUrl="~/images/CommentLoading.gif" />
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <br class="ClearBoth" />
+            <asp:LinkButton ID="SendLinkButton" runat="server" onclick="SendLinkButton_Click" 
+            CssClass="ContactLinkButton MarginCenter" ValidationGroup="Contact">Send Message</asp:LinkButton>
+    
+
+<br class="ClearBoth" />
+<asp:Label ID="SuccessLabel" runat="server" 
+    Text="Your contact Message Sent Successfully, thanks for your contact." 
+    SkinID="LabelHeaderSkin"></asp:Label>
+</div>
+    </ContentTemplate>
+    <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="SendLinkButton" EventName="Click" />
+        </Triggers>
+    </asp:UpdatePanel>
+</div>

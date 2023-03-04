@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using KFGCMS.BLL;
+using System.Configuration;
+
+public partial class Portals_Controls_UC_CompleteRegistrationProcess : System.Web.UI.UserControl
+{
+    public string DataContent
+    {
+        set
+        {
+            string [] split = {"&"},
+                    splitInside = {"="};
+            string queryLeft, queryRight;
+
+            string userid = "";
+
+          //  HeaderLabel = Site_Info.SignUp_Complete_TitlPage;
+
+          //  Signup_Info signupInfo= new Signup_Info();
+
+            //foreach (string queryString in value.Split(split, StringSplitOptions.None))
+            //{
+            //    if (!String.IsNullOrEmpty(queryString))
+            //    {
+            //        queryLeft = queryString.Split(splitInside, StringSplitOptions.None)[0];
+            //        queryRight = queryString.Split(splitInside, StringSplitOptions.None)[1];
+            //        if (queryLeft.ToLower() == "name")
+            //            Signup_Info.Name = queryRight;
+            //        else
+            //            if (queryLeft.ToLower() == "password")
+            //                Signup_Info.Password = queryRight;
+            //            else
+            //                if (queryLeft.ToLower() == "email")
+            //                    Signup_Info.email = queryRight;
+            //                else
+            //                    if (queryLeft.ToLower() == "phone")
+            //                        Signup_Info.Phone = queryRight;
+            //                    else
+            //                        if (queryLeft.ToLower() == "comment")
+            //                            Signup_Info.Comment = queryRight;
+            //                        else
+            //                            if (queryLeft.ToLower() == "date")
+            //                                Signup_Info.Date = Convert.ToDateTime(queryRight);
+            //    }
+
+            //}
+
+            Signup_Bridge signupBridge = new Signup_Bridge();
+            userid = signupBridge.Course_UserSignUp();
+            
+            
+            StatusLabel.Visible = true;
+            StatusLabel.Text = Site_Info.SignUp_Complete_SuccessMessage;
+
+            HttpCookie cookie = new HttpCookie("CourseUser");
+            cookie["Course_UserName"] = HttpUtility.UrlEncode(Signup_Info.Name);
+            cookie["Course_UserID"] = userid;
+            cookie["Course_UserPassword"] = HttpUtility.UrlEncode(Signup_Info.Password);
+
+            Response.Cookies.Add(cookie);
+
+            Response.Redirect(String.Format("{0}{1}",ConfigurationManager.AppSettings["PortalAlias"],ConfigurationManager.AppSettings["WebsiteHome"]));
+
+
+        }
+
+    }
+}

@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Controls_UC_Questionnaire : System.Web.UI.UserControl
+{
+    DataTable MasterDataTable = new DataTable();
+
+    public DataSet DataContent
+    {
+        set
+        {
+
+           
+
+            if (value.Tables.Count != 0 && value.Tables[0].Rows.Count !=0)
+            {
+                 MasterDataTable = value.Tables[0];
+            }
+                if (Pages_BLL.GetLanguage() == "arb")
+                {
+                    HeaderLabel.Text = "الاستفتاءات";
+                    QuestionnaireGridView.EmptyDataText = "لا يوجد استفتاءات متاحة لك في الوقت الحالي... يرجى التواصل مع ادارة الموقع";
+                }
+
+                else
+                {
+                    HeaderLabel.Text = "Questionnaires";
+                    QuestionnaireGridView.EmptyDataText = "There is no Questionnaires Available Right Now, Please Contact With Our Admin Department";
+                }
+
+
+            
+            QuestionnaireGridView.DataSource = MasterDataTable;
+            QuestionnaireGridView.DataBind();
+
+        }
+    }
+}

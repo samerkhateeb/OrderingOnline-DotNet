@@ -1,0 +1,264 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Collections.Generic;
+using KFGCMS.BLL;
+
+public partial class Portals_Controls_UC_MediaGallery : System.Web.UI.UserControl
+{
+
+    #region Members
+    
+        string strPlayerCode,
+                mediaType;
+    
+        object mediaFile;
+
+        DataTable mediaDataTable;
+        DataSet galleryDataSet;
+    
+    #endregion
+
+    
+    #region Events
+    public event EventHandler MediaGalleryEvent;
+    #endregion
+
+
+    #region Properties
+
+    public string MediaTypeCurrent
+    {
+        set;
+        get;
+    }
+    public string MediaName
+    {
+        set;
+        get;
+    }
+
+    public string MediaType
+    {
+        set;
+        get;
+    }
+
+    public int selectedMediaTable
+    {
+        set;
+        get;
+    }
+
+    public string ChangeLoadingLabel
+    {
+        set
+        {
+
+        }
+    }
+
+    public DataTable MediaSiteMapPath
+    {
+        set
+        {
+            
+
+            
+           
+        }
+    }
+
+
+    public string MediaTypeValue
+    {
+        set
+        {
+            TypeHiddenField.Value = value;
+        }
+
+        get
+        {
+            return TypeHiddenField.Value;
+        }
+    }
+
+    public DataTable GalleryContent
+    {
+        set
+        {
+            DataTable glleryDataTable = value;
+            mediaType = MediaTypeValue;
+
+            DataRow dataRow = glleryDataTable.Rows[0];
+            RootHyperLink.Text = dataRow["Root_Title"].ToString();
+            RootHyperLink.NavigateUrl = Pages_BLL.GenerateMenuUrl(dataRow["RootID"], "Page", dataRow["Root_Type"], dataRow["Root_StaticLink"]);
+
+            ParentHeaderLabel.Text = dataRow["Parent_Title"].ToString();
+            ParentHeaderLabel.DataBind();
+             
+            if (mediaType == "3") // Photo
+            { 
+                PhotoPanel.Visible = true;
+                PhotoPanel.DataBind();
+                PrepareControl("PhotoPanel");
+
+                ScriptLiteral.Text = "<script type=\"text/javascript\">$(document).ready(function(){$.ImageBox.init({loaderSRC: '../../images/loading.gif',closeHTML: '<img src=\"../../images/close.gif\" />'});}); </script> ";
+                
+                PhotoDataList.DataSource = value;
+                PhotoDataList.DataBind();
+            }
+
+            else
+                if (mediaType == "4") //Audio
+                {
+                    PrepareControl("AudioPanel");
+                    AudioDataList.DataSource = glleryDataTable;
+                    AudioPanel.Visible = true;
+                    AudioPanel.DataBind();
+                    foreach (DataRow row in glleryDataTable.Rows)
+                    {
+                        if (row["ID"].ToString() == row["SELECTED_MEDIA_ID"].ToString())
+                        {
+                            Media_Info.File = row["MEDIAFILE"].ToString();
+                            Media_Info.Title = row["TITLE"].ToString();
+                            Media_Info.Description = row["DESCRIPTION"].ToString();
+                            RegisterMediaPlayer();
+                            break;
+                        }
+                    }
+                }
+
+                else
+                    if (mediaType == "5") // Video
+                    {
+                    VideoPanel.Visible = true;
+                        VideoPanel.DataBind();
+                        foreach (DataRow row in glleryDataTable.Rows)
+                        {
+                            if (row["ID"].ToString() == row["SELECTED_MEDIA_ID"].ToString())
+                            {
+                                Media_Info.File = row["MEDIAFILE"].ToString();
+                                Media_Info.Title = row["TITLE"].ToString();
+                                Media_Info.Description = row["DESCRIPTION"].ToString();
+                                RegisterMediaPlayer();
+                                break;
+                            }
+                        }
+
+                        PrepareControl("VideoPanel");
+                        VideoDataList.DataSource = glleryDataTable;
+                    }
+
+            this.DataBind();
+
+        }
+    }
+
+    private void RegisterMediaPlayer()
+    {
+            mediaType = QueryString_Info.Type;
+
+            if (mediaType == "4") // Audio
+            {
+
+                strPlayerCode = String.Format(@"<embed  type='application/x-mplayer2' 
+                                                pluginspage='http://www.microsoft.com/Windows/Downloads/Contents/MediaPlayer/'  
+                                                HEIGHT='64' WIDTH='90%'  src='{0}'  filename='{0}'  autostart='0'  showcontrols='1' 
+                                                showdisplay='0'  autorewind='1'></embed>", "../" + Media_Info.File);
+
+                AudioNameLabel.Text = Media_Info.Title;
+                AudioDescriptionLabel.Text = Media_Info.Description;
+
+                AudioLiteral.Text = strPlayerCode;
+                AudioLiteral.DataBind();
+            }
+
+            else
+                if (mediaType == "5") // Video
+            {
+
+                VideoNameLabel.Text = Media_Info.Title;
+                VideoDescriptionLabel.Text = Media_Info.Description;
+
+                strPlayerCode = String.Format(@"<embed  type='application/x-mplayer2' 
+                                                pluginspage='http://www.microsoft.com/Windows/Downloads/Contents/MediaPlayer/'  
+                                                width='500'  height='400'  src='{0}'  filename='{0}'  autostart='0'  showcontrols='1' 
+                                                showdisplay='0'  autorewind='1'></embed>", "../" + Media_Info.File);
+
+                VideoLiteral.Text = strPlayerCode;
+                VideoLiteral.DataBind();
+            }
+
+    }
+
+   
+
+ #endregion
+
+
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+
+        }
+
+    }
+
+
+    public void PrepareControl(string panelName)
+    { 
+        Panel RequestedPanel = (Panel)this.FindControl(panelName);
+
+        foreach (Control control in this.Controls)
+        {
+            if (control is Panel)
+                if (((Panel)control).ID == RequestedPanel.ID)
+                    control.Visible = true;
+                else
+                    control.Visible = false;
+        }
+    }
+
+   
+    protected void MediaGalleryItemCommand(object source, DataListCommandEventArgs e)
+    {
+      //  System.Threading.Thread.Sleep(5000);
+
+       object objSelectedDataKey = ((DataList)source).DataKeys[e.Item.ItemIndex];
+       Media_Info.File = e.CommandArgument.ToString();
+       Media_Info.Title = (e.Item.FindControl("TitleHiddenField") as HiddenField).Value;
+       Media_Info.Description = (e.Item.FindControl("DescriptionHiddenField") as HiddenField).Value;
+       this.selectedMediaTable = 1; // to put the data table for current media player.  
+       RegisterMediaPlayer();
+    }
+
+
+
+    //protected void AudioDataList_ItemCommand(object source, DataListCommandEventArgs e)
+    //{
+    //    int intSelectedDataKey = (int)AudioDataList.DataKeys[e.Item.ItemIndex];
+    //    MediaType = "4";
+    //    selectedMediaTable = 1; // to put the data table for current media player.  
+    //    MediaControlEvent_Audio(intSelectedDataKey, e);
+    //}
+
+
+
+    protected void MediaButton_Click(object sender, EventArgs e)
+    {
+
+    }
+}

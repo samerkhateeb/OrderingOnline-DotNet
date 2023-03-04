@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\Left" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/KFG.Utilities.dll" publishTime="06/05/2012 11:57:48" />
+    <file relUrl="Left.ascx" publishTime="06/05/2012 22:01:38" />
+    <file relUrl="bin/KFGCMS.INFO.pdb" publishTime="06/05/2012 11:57:48" />
+    <file relUrl="bin/KFG.Utilities.pdb" publishTime="06/05/2012 11:57:48" />
+    <file relUrl="bin/Left.pdb" publishTime="06/05/2012 22:01:40" />
+    <file relUrl="bin/Left.dll" publishTime="06/05/2012 22:01:41" />
+    <file relUrl="bin/KFGCMS.BASE.dll" publishTime="06/05/2012 11:57:48" />
+    <file relUrl="bin/KFGCMS.BLL.pdb" publishTime="06/05/2012 14:43:40" />
+    <file relUrl="bin/KFGCMS.BLL.dll" publishTime="06/05/2012 14:43:40" />
+    <file relUrl="bin/KFGCMS.INFO.dll" publishTime="06/05/2012 11:57:48" />
+    <file relUrl="bin/Microsoft.ApplicationBlocks.Data.dll" publishTime="02/21/2009 02:25:54" />
+    <file relUrl="bin/KFGCMS.BASE.pdb" publishTime="06/05/2012 11:57:48" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,374 @@
+﻿
+body
+{
+	background-image: url(../../images_site/Body_BgTop.png);
+		background-repeat: repeat-x;
+		background-position: left top;
+		background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, Geneva, sans-serif;
+	margin: 0px;
+}
+.MainText
+{
+	padding-right: 5px;
+	font-size: 11pt;
+	color: white;
+	font-family: arial;
+	text-align: right;
+	text-decoration: none;
+}
+a.MainText
+{
+	padding-right: 5px;
+	font-size: 11pt;
+	color: white;
+	font-family: arial;
+	text-align: right;
+	text-decoration: underline;
+	font-weight:bold;
+}
+a.MainText:hover
+{
+	padding-right: 5px;
+	font-size: 11pt;
+	color: #72b76d;
+	font-family: arial;
+	text-align: right;
+	text-decoration: none;
+	font-weight:bold;
+}
+a
+{
+	
+	color: white;
+	
+	text-align: right;
+	text-decoration: underline;
+	font-weight:bold;
+	font-size:14;
+	
+}
+a:hover
+{
+	
+	color: #72b76d;
+	Text-decoration:none;
+	text-align: right;
+	
+	font-weight:bold;
+	
+}
+.Fotter_Line
+{
+	border-right: #b3cab1 0px solid;
+	border-top: #b3cab1 1px solid;
+	border-left: #b3cab1 0px solid;
+	border-bottom: #b3cab1 0px solid;
+	height: 30px;
+	display:block;
+}
+.ContainerTitle
+{
+	background-position: right top;
+	display: block;
+	font-weight: bold;
+	font-size: 12px;
+	background-image: url(images/Container_Title_Small.gif);
+	width: 165px;
+	color: white;
+	background-repeat: no-repeat;
+	font-family: arial;
+	height: 39px;
+	text-align: right;
+	text-decoration: none;
+}
+.TextBoxStyle
+{
+	font-size: 3pc;
+	color: aqua;
+	font-family: arial;
+}
+.menu_btns
+{
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	color: #2a5782;
+	background-image: url(../../images/btn_bg.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	text-align: right;
+	display: block;
+	height: 20px;
+	width: 172px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+.menu_btns:hover {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	color: #2a5782;
+	background-image: url(../../images/btn_bg_hover.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	text-align: right;
+	display: block;
+	height: 20px;
+	width: 172px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+
+.menu_horizontal_btn
+{
+	background-position: center center;
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	background-image: url(../../images/Tab_Horizontal_btn.gif);
+	vertical-align: top;
+	color: #325687;
+	background-repeat: repeat-x;
+	font-family: arial, Sans-Serif;
+	height: 30px;
+	text-align: center;
+	padding-top: 5px;
+	text-decoration: none;
+	margin-top: 3px;
+}
+
+.menu_horizontal_btn:hover
+{
+	background-position: center center;
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	background-image: url(../../images/Tab_Horizontal_btn_hover.gif);
+	vertical-align: middle;
+	width: 7em;
+	color: #325687;
+	background-repeat: repeat-x;
+	font-family: arial, Sans-Serif;
+	height: 30px;
+	text-align: center;
+	text-decoration: underline;
+}
+.mainmenu_btn
+{
+	margin-top: 7px;
+}
+.Label_Title
+{
+	padding-right: 20px;
+	background-position: right top;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	background-image: url(../../images/Container_Title_Small.gif);
+	width: 165px;
+	color: white;
+	background-repeat: no-repeat;
+	font-family: arial;
+	height: 39px;
+	text-align: right;
+	text-decoration: none;
+	padding-top: 0px;
+}
+.Label_Title_Larg
+{
+	padding-right: 20px;
+	background-position: right top;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	background-image: url(../../images/Container_Title_Larg.gif);
+	width: 240px;
+	color: white;
+	background-repeat: no-repeat;
+	font-family: arial;
+	height: 39px;
+	text-align: right;
+	text-decoration: none;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+.label_title_heading
+{
+	display: block;
+	font-weight: bold;
+	font-size: 12pt;
+	vertical-align: top;
+	width: 150px;
+	color: white;
+	font-family: arial;
+	height: 20px;
+	text-align: right;
+	border-right: 0px solid;
+	border-top: 0px solid;
+	border-left: 0px solid;
+	border-bottom: 1px solid #b3cab1;
+	background-position: right center;
+	background-image: url(../../images/Bullites.gif);
+	background-repeat: no-repeat;
+	padding-right: 15px;
+	margin-bottom: 5px;
+}
+.LinkBtn_Footer
+{
+	font-size: 12px;
+	color: white;
+	margin-right: 0px;
+	font-family: tahoma;
+	text-decoration: none;
+	font-weight:normal;
+}
+.LinkBtn_Footer:hover
+{
+	font-size: 12px;
+	color: white;
+	margin-right: 0px;
+	font-family: tahoma;
+	text-decoration: none;
+	font-weight:normal;
+}
+.CopyRight
+{
+	font-size: 12px;
+	color: white;
+	font-family: tahoma;
+	text-align: center;
+	text-decoration: none;
+}
+a.CopyRight 
+{
+	font-size: 12px;
+	color: #72b76d;
+	font-family: tahoma;
+	text-align: center;
+	text-decoration: none;
+	font-weight:normal;
+}
+a.CopyRight:hover
+{
+	font-size: 12px;
+	color: white;
+	font-family: tahoma;
+	text-align: center;
+	text-decoration: underline;
+}
+font
+{	font-size: 12px;
+	color: #72b76d;
+	font-family: tahoma;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* ***********************  English Section  *************************** */
+
+.menu_btns_English
+{
+	font-family: verdana,arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #2a5782;
+	background-image: url(../../images/btn_bg.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	text-align: left;
+	display: block;
+	height: 20px;
+	width: 172px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+.menu_btns_English:hover
+{
+	font-family: verdana,arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #2a5782;
+	background-image: url(../../images/btn_bg_hover.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	text-align: left;
+	display: block;
+	height: 20px;
+	width: 172px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+.btn_lang_eng
+{
+	background-position: center top;
+	font-size: 12px;
+	background-image: url(../../images/btn_lang.gif);
+	vertical-align: middle;
+	color: #002040;
+	background-repeat: no-repeat;
+	font-family: arial;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-right: 13px;
+}
+
+.btn_lang_eng:hover
+{
+	background-position: center top;
+	font-size: 12px;
+	background-image: url(../../images/btn_lang_hover.gif);
+	vertical-align: middle;
+	color: #002040;
+	background-repeat: no-repeat;
+	font-family: arial;
+	text-align: center;
+}
+.btn_lang_arb
+{
+	background-position: center top;
+	font-size: 12px;
+	background-image: url(../../images/btn_lang.gif);
+	vertical-align: bottom;
+	color: #002040;
+	background-repeat: no-repeat;
+	font-family: arial;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-left: 18px;
+	padding-top: 2px;
+	font-weight: normal;
+}
+
+.btn_lang_arb:hover
+{
+	background-position: center top;
+	font-size: 12px;
+	background-image: url(../../images/btn_lang_hover.gif);
+	vertical-align: middle;
+	color: #002040;
+	background-repeat: no-repeat;
+	font-family: arial;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-left: 18px;
+}

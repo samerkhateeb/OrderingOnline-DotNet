@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\Search" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Search.ascx" publishTime="05/20/2012 17:27:13" />
+    <file relUrl="bin/KFGCMS.BASE.dll" publishTime="08/22/2012 16:14:35" />
+    <file relUrl="bin/es/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/Search.dll" publishTime="08/22/2012 16:30:06" />
+    <file relUrl="bin/zh-CHS/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ru/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.BLL.pdb" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/AjaxControlToolkit.pdb" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFG.Utilities.dll" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/KFGCMS.BASE.pdb" publishTime="08/22/2012 16:14:35" />
+    <file relUrl="bin/KFGCMS.INFO.pdb" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/zh-CHT/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/he/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/Search.pdb" publishTime="08/22/2012 16:30:06" />
+    <file relUrl="bin/KFG.Utilities.pdb" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/fr/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.BLL.dll" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/nl/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/tr-TR/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/de/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/it/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="Search_Result.ascx" publishTime="05/20/2012 17:22:53" />
+    <file relUrl="bin/Microsoft.ApplicationBlocks.Data.dll" publishTime="02/21/2009 02:25:54" />
+    <file relUrl="bin/KFGCMS.INFO.dll" publishTime="08/22/2012 16:14:36" />
+    <file relUrl="bin/cs/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/pt/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ar/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/hi/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ko/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ja/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+  </publishProfile>
+</publishData>

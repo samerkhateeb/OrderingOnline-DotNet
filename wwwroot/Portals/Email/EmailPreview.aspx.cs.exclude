@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Net.Mail;
+
+using KFGCMS.BLL;
+
+public partial class Portals_EmailPreview : System.Web.UI.Page
+{
+    string pageUrl = HttpContext.Current.Request.QueryString["Url"];
+    string[] splitter = { "info=" };
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        { 
+            string  pageQuery = pageUrl.Split(splitter, StringSplitOptions.None)[1],
+                        language = "arb";
+
+            if (!IsPostBack)
+            {
+
+                Pages_BLL.Page_UpdateCounter(pageQuery, "email");
+
+                if (Pages_BLL.GetLanguage() !=null)
+                    language = Pages_BLL.GetLanguage();
+
+                if (language == "arb")
+
+                    Pages_BLL.ChangePageTitle(this, "نموذج إرسال بريد إلكتروني");
+                else
+                    Pages_BLL.ChangePageTitle(this, "Email Form");
+
+            }
+        }
+        catch (Exception exc)
+        {
+            Global_BLL.FireException(this,exc.Message);
+        }
+
+    }
+    protected void SendButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Pages_BLL.SendEmail(SenderNameTextBox.Text, ConfigurationManager.AppSettings["SenderEmail"].ToString(), RecipientEmailTextBox.Text, MessageTextBox.Text, Request.QueryString["Url"]);
+            Response.Redirect ("SuccessEmail.aspx",false);
+            
+        }
+        catch (Exception exc)
+        {
+            Global_BLL.FireException(this, "Unknown Error Occured ... Unable to Send Email, Please Try Later");
+        }
+    }
+}

@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAJAX.master.cs" Inherits="Portals_MasterPage" %>
+
+<%@ Register Assembly="HTMLWriterControl" Namespace="HTMLWriterControl" TagPrefix="KFG" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="KFG" %>
+
+<%@ Register Assembly="nStuff.UpdateControls" Namespace="nStuff.UpdateControls" TagPrefix="nStuff" %>
+
+
+<%@ Register src="Modules/Menu/Menu.ascx" tagname="Menu" tagprefix="KFG" %>
+
+<%@ Register src="Modules/Banner/Banner.ascx" tagname="Banner" tagprefix="KFG" %>
+
+<%@ Register src="Modules/Search/Search.ascx" tagname="Search" tagprefix="KFG" %>
+
+<%@ Register src="Modules/Customers/Customer_Registration.ascx" tagname="Customer_Registration" tagprefix="uc1" %>
+
+
+
+<%@ Register src="Modules/Popup/PopupOrderType.ascx" tagname="PopupOrderType" tagprefix="uc2" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script src="../Scripts/ClientBehavior.js" type="text/javascript" ></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <title></title>
+        <link id="StyleSheetLink" media="screen" runat="server" type="text/css" rel="stylesheet">
+        <link href="/Assets/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<script src="/Assets/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="/Assets/Scripts/KFG_Utilties.js" type="text/javascript"></script>
+        <script src="/Assets/Scripts/jquery.cookie.js" type="text/javascript"></script>
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+<div class="Site_Div MarginCenter">
+
+<div class="Header_Div">
+
+        <div class="Header_Menu_Top_Div">
+            <KFG:Menu ID="MenuTop" runat="server" />
+           
+        </div>
+    
+        <div class="Header_Right_Div">
+            <a href="http://www.facebook.com/shopping" target="_blank" class="Icon_FaceBook"></a> 
+            <a href="http://twitter.com/shopping" target="_blank" class="Icon_Twitter"></a> 
+            <a href="javascript:;" class="Icon_YouTube"></a> 
+        </div>
+
+        <div class="Header_Banner_Div">
+                <KFG:Banner ID="BannerControl" runat="server" />
+        </div>
+
+        <a href='<%=ConfigurationManager.AppSettings["WebsiteUrl"].ToString() %>' class="Logo_Div">
+            <img src="/Assets/images/LogoAlone.gif" border="0" />
+        </a>
+
+</div>
+    
+    <KFG:Menu ID="Menu_PageCategoriesControl" runat="server" />
+    <asp:Image ID="TopImageControl" Visible ="false" runat="server" />
+      
+    <div class="Site_Body MarginCenter">
+   
+        <div id="marqueeDiv" visible="false" class="Hide" runat="server" >
+            
+        </div>
+        
+        <div class="Body_Content_Div MarginCenter">
+        
+            <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+       
+       
+        <div class="Footer_Div">
+                
+                <KFG:Menu ID="MenuFooter" runat="server" />
+                
+
+            <div class="CopyRight_Div">
+                    <asp:Label ID="CopyRightLabel" CssClass="CopyRight_Label" runat="server"></asp:Label>
+                    <br class="ClearBoth" />
+                    <a href="http://www.kfg.com.kw" target="_blank" class="CopyRight_Image" title="Kout Food Group">
+                       <img src="/Assets/images/KFGCopyRight.gif" alt="Kout Food Group" border="0" />
+                    </a>
+            </div>
+        </div>
+        
+
+    </div>  
+        
+</div>
+
+       
+
+<uc2:PopupOrderType ID="PopupOrderTypeControl" runat="server" />
+       
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35146188-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>

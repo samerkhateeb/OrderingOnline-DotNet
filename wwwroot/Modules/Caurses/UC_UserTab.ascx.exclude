@@ -1,0 +1,10 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_UserTab.ascx.cs" Inherits="Portals_Controls_UC_UserTab" %>
+ <div class="User_Tab_Div MarginLeft10 FloatLeft">
+         <div class="SFloatLeft">
+             <img src="~/Portals/Themes/CssImages/UserTab_Left.gif" runat="server" />
+         </div>
+         <div class="SFloatRight">
+            <img src="~/Portals/Themes/CssImages/UserTab_Right.gif" runat="server"/>
+         </div>
+             <asp:Label ID="UserLabel" runat="server" CssClass="User_Tab_Label"></asp:Label>
+</div>

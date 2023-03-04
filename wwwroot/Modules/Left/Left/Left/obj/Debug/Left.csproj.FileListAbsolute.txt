@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\Left\Left\Left\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Left\Left\Left\bin\Left.dll
+\Web\wwwroot\Modules\Left\Left\Left\bin\Left.pdb
+\Web\wwwroot\Modules\Left\Left\Left\bin\KFGCMS.BLL.dll
+\Web\wwwroot\Modules\Left\Left\Left\bin\Microsoft.ApplicationBlocks.Data.dll
+\Web\wwwroot\Modules\Left\Left\Left\bin\KFGCMS.BLL.pdb
+\Web\wwwroot\Modules\Left\Left\Left\obj\Debug\Left.dll
+\Web\wwwroot\Modules\Left\Left\Left\obj\Debug\Left.pdb
+\Web\wwwroot\bin\Left.dll
+\Web\wwwroot\bin\Left.pdb

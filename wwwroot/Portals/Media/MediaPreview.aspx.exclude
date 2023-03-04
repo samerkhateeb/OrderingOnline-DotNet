@@ -1,0 +1,37 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPageAJAX.master" CodeFile="MediaPreview.aspx.cs" Theme="Portal" Inherits="Portals_Media_MediaPreview" %>
+<%@ MasterType VirtualPath="~/MasterPageAJAX.master" %>
+
+<%@ Register src="~/Modules/MediaGallery/UC_MediaGallery.ascx" tagname="UC_MediaGallery" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Left/UC_LeftContainer.ascx" tagname="UC_LeftContainer" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Banner/UC_Banner.ascx" tagname="UC_Banner" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Groups/UC_SPGroups.ascx" tagname="UC_SPGroups" tagprefix="Plex" %>
+
+
+<%@ Register src="~/Modules/Menu/UC_Menu.ascx" tagname="UC_Menu" tagprefix="Plex" %>
+
+
+<asp:Content ContentPlaceHolderID="BodyContentPlaceHolder" ID="BodyContent" runat="server">
+
+
+    <link href="../Themes/MediaCss/StyleBase.css" rel="stylesheet" type="text/css" />
+    <link href="../Themes/MediaCss/StyleLayout.css" rel="stylesheet" type="text/css" />
+    <link href="../Themes/MediaCss/fancy-blue.css" rel="stylesheet" type="text/css" />
+    
+    <script src="../Scripts/MediaScripts/mjquery.js" type="text/javascript"></script>
+    <script src="../Scripts/MediaScripts/interface.js" type="text/javascript"></script>
+    
+    <script src="../scripts/InProgress.js" type="text/javascript"></script>
+
+        <div class="Container_Right_Div FloatRight">
+            <Plex:UC_MediaGallery ID="UC_MediaGalleryControl" runat="server" />
+        </div>
+
+        <div class="Container_Left_Div FloatLeft"> 
+            <Plex:uc_leftcontainer ID="UC_LeftContainerControl" runat="server" />
+            <Plex:uc_banner ID="UC_BannerSubPage" runat="server" />
+        </div>
+
+
+        <%--<asp:Button ID="MediaButton" runat="server" onclick="MediaButton_Click" CssClass="Hide" />--%>
+        
+</asp:Content>

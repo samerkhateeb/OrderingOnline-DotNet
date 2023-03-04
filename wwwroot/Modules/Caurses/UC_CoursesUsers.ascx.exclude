@@ -1,0 +1,66 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_CoursesUsers.ascx.cs" Inherits="Portals_Controls_UC_CoursesUsers" %>
+<%@ Import Namespace="KFGCMS.BLL" %>
+
+<asp:Label ID="EmptyTextLabel" runat="server"></asp:Label>
+
+<asp:GridView ID="CoursesGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ParentID"  ShowHeader="False" Width="100%" >
+    <Columns>
+        <asp:TemplateField>
+            <ItemTemplate>
+            
+            <div class="Course_Wide_Div">
+            <div class="Course_Wide_HeaderDiv">
+            
+                <div class="SFloatLeft" >
+                    <img id="Img2" src="../Themes/CssImages/Container_Mid_Header_Left.gif" runat="server" />
+                </div>
+                    
+                <div class="SFloatRight" >
+                    <img id="Img3" src="../Themes/CssImages/Container_Mid_Header_Right.gif" runat="server" />
+                </div>
+                <div class="Course_Wide_HeaderLabel FloatLeft">
+                    <asp:Label ID="HeaderLabel" runat="server"></asp:Label>
+                </div>
+                            </div>
+                            <div class="Course_Wide_BodyDiv">
+                <asp:GridView ID="LessonsGridView" AutoGenerateColumns="False" Width="100%" runat="server" DataKeyNames="ID" >
+                    <Columns>
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                            
+                            
+                            
+                            </HeaderTemplate>
+                            
+                            <ItemTemplate>
+                            
+                            
+                               
+                                <div class="Course_Wide_Row">
+                                
+                                <asp:Label ID="RowHeaderLabel" Text='<%# Eval("Title") %>' CssClass="Course_Wide_Row_HeaderInside" runat="server"></asp:Label>
+                                <asp:Label ID="DateLabel" CssClass="Label" runat="server" Text='<%# Date_BLL.FilterDateToDate(Eval("Date")) %>'></asp:Label>
+                                <br class="ClearBoth" /> 
+                                
+                                <asp:HyperLink ID="MediaPlayerHyperLink" Visible="false" CssClass="MediaPlayerIcon FloatLeft" SkinID="NoSkin"  runat="server"></asp:HyperLink>
+                                <asp:HyperLink ID="DocHyperLink" Visible="false" CssClass="DocIcon FloatLeft" SkinID="NoSkin"  runat="server"></asp:HyperLink>
+                                <asp:Label ID="OtherAttachedLabel" CssClass="FloatLeft" SkinID="NoSkin" runat="server"></asp:Label>
+                                <br class="ClearBoth" /> 
+                                    <asp:Label ID="BodyLabel" Text='<%# Eval("Body")%>' CssClass="LabelDescription" SkinID="NoSkin" runat="server" ></asp:Label>
+                                    <br class="ClearBoth" />
+                                    <hr class="MarginCenter" />
+                                </div>
+                                         
+                            
+                            
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+               </div>
+               </div>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+</div>

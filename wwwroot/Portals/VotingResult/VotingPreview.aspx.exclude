@@ -1,0 +1,19 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="VotingPreview.aspx.cs" Inherits="Portals_Voting_VotingPreview" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <link id="StyleSheetLink" media="screen" runat="server" type="text/css" rel="stylesheet">
+</head>
+<body  style ="background:#fff; direction:rtl;">
+    <form id="form1" runat="server">
+    <asp:Label ID="QuestionLabel" runat="server" CssClass="VotingQuestion" SkinID="NoSkin"></asp:Label>
+
+        <asp:Panel ID="ResultsPanel" runat="server">        
+
+        </asp:Panel>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.IO;
+using KFGCMS.BLL;
+
+public partial class Portals_Content_CategoryPreview : System.Web.UI.Page
+{
+    string tableType;
+    DataSet SubpageContainerDataSet = new DataSet();
+    DataRow row;
+
+    public string DataTableType(DataTable dataTable)
+    {
+        row = dataTable.Rows[0];
+        return row["TableType"].ToString();
+    }
+
+    public void HideControl(Control control)
+    {
+        control.Visible = false;
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            try
+            {
+                // decode url
+                Global_BLL.DecodeUrl(Request.QueryString["info"]);
+
+                // request data from database according to page type and id
+                DataSet dataSet = Pages_BLL.ObjectData(QueryString_Info.ID, QueryString_Info.Source, QueryString_Info.Type);
+
+
+                foreach (DataTable dataTable in dataSet.Tables)
+                {
+                    // get table type
+                    tableType = DataTableType(dataTable);
+
+                    // check if table is empty or not
+                    if (row[0].ToString().ToLower() == "empty")
+                    {
+                        continue;
+                    }
+
+                    switch (tableType.ToLower())
+                    {
+                        case "content":
+                            {
+                                // Init Page Title
+                                Pages_BLL.ChangePageTitle(this.Page, dataSet.Tables[0].Rows[0]["Title"].ToString());
+
+                                // bind page content
+                                UC_CategorySubPagesControl.DataContent = dataTable;
+
+                                // init important information
+                                UC_CategorySubPagesControl.CatID = QueryString_Info.ID.ToString();
+                                UC_CategorySubPagesControl.Source = QueryString_Info.Source.ToString();
+                                UC_CategorySubPagesControl.Type = QueryString_Info.Type.ToString();
+
+                                break;
+                            }
+
+                            
+                        //case "banner":
+                        //    {
+                        //        // bind banners
+                        //        // Check Banners Status
+                        //        if (dataTable.Rows.Count != 0)
+                        //        {
+                        //            foreach (DataRow bannerRow in dataTable.Rows)
+                        //            {
+
+                        //                if (!String.IsNullOrEmpty(bannerRow["BannerTop"].ToString()))
+                        //                {
+                        //                    Master.BannerTopDataContent = bannerRow["BannerTop"].ToString();
+                        //                }
+                        //                //else
+                        //                //    if (String.IsNullOrEmpty(bannerRow["BannerTop"].ToString())) // this because top banner shouldnot become null
+                        //                //    {
+                        //                //        Master.BannerTopDataContent = "<img src='" + ConfigurationManager.AppSettings["BannerTopDefault"].ToString() + "' />";
+                        //                //    }
+
+                        //                if (!String.IsNullOrEmpty(bannerRow["BannerSubPage"].ToString()))
+                        //                {
+                        //                    UC_BannerSubPage.DataContent = bannerRow["BannerSubPage"].ToString();
+                        //                }
+
+                        //            }
+                        //        }
+                        //        break;
+                        //    }
+                        //case "menu":
+                        //    {
+                        //        DataView MenuDataView = new DataView(dataTable);
+                        //        MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 1";
+
+                        //        Master.MenuTopDataContent = MenuDataView;
+
+                        //        MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 2";
+                        //        Master.M  enuBottomDataContent = MenuDataView;
+                        //        break;
+                        //    }
+
+                        ////Init  Left Container (SubPage Container)
+                        //case "containersubpage":
+                        //    {
+                        //        SubpageContainerDataSet.Tables.Add (dataTable.Copy());
+                        //        break;
+                        //    }
+                    }
+                }
+
+                //// init Left Container Column
+                //if (SubpageContainerDataSet.Tables.Count != 0)
+                //    UC_LeftContainerControl.DataContent = SubpageContainerDataSet;
+                //else
+                //    HideControl(UC_LeftContainerControl);
+
+
+                Master.StaticContent(dataSet);
+
+               
+
+            }
+
+            catch (Exception exc)
+            {
+                Global_BLL.FireException(this, exc.Message);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,221 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_CareersForm.ascx.cs" Inherits="Portals_Controls_UC_CareersForm" %>
+
+<div class="Careers_Div">
+
+<div class="Careers_Wide_HeaderDiv">
+            
+                <div class="SFloatLeft" >
+                    <img id="Img2" src="../Themes/CssImages/Container_Mid_Header_Left.gif" runat="server" />
+                </div>
+                    
+                <div class="SFloatRight" >
+                    <img id="Img3" src="../Themes/CssImages/Container_Mid_Header_Right.gif" runat="server" />
+                </div>
+                <div class="Course_Wide_HeaderLabel FloatLeft">
+                    <asp:Label ID="HeaderLabel" runat="server"></asp:Label>
+                </div>
+</div>
+                            
+         <div class="Careers_Wide_BodyDiv">
+         
+             
+         <asp:UpdateProgress ID="CareerUpdateProgress" runat="server" AssociatedUpdatePanelID="SubmitUpdatePanel">
+            <ProgressTemplate>
+                <img src="../Themes/CssImages/loadingAnimation.gif" style="width: 208px; height: 13px" />
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        
+        <asp:UpdatePanel ID="SubmitUpdatePanel" runat="server">
+        <ContentTemplate>
+        
+        <asp:Label ID="AttentionLabel" CssClass="QuestionnaireDetails_Label" runat="server"></asp:Label>
+             <asp:Panel ID="ControlsPanel" runat="server">
+            
+            
+<div class="FloatLeft DivLabel">
+    <asp:TextBox ID="RangeTextBox" runat="server" CssClass="Hide">-1</asp:TextBox>
+    <br />
+    <asp:Label ID="NameLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+        AssociatedControlID="NameTextBox" ></asp:Label>
+    <asp:TextBox ID="NameTextBox" runat="server" CssClass="Careers_TextBox FloatLeft"></asp:TextBox>
+    <asp:RequiredFieldValidator
+        ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="" 
+        ControlToValidate="NameTextBox" SetFocusOnError="True"></asp:RequiredFieldValidator>
+</div>
+ 
+ 
+    <br class="ClearBoth" />
+    
+<div class="FloatLeft DivLabel">
+    <asp:Label ID="EmailLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+        AssociatedControlID="EmailTextBox"></asp:Label>
+    
+    <asp:TextBox ID="EmailTextBox" runat="server" CssClass="Careers_TextBox FloatLeft"></asp:TextBox>
+    
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+        ErrorMessage="*" ForeColor="" ControlToValidate="EmailTextBox" 
+        SetFocusOnError="True" Display="Dynamic"></asp:RequiredFieldValidator>
+    
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+        ControlToValidate="EmailTextBox" Display="Dynamic" 
+        ErrorMessage="Enter Valid Email" ForeColor="" 
+        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+    
+</div>
+ <br class="ClearBoth" />
+ 
+ <div class="FloatLeft DivLabel">
+    <asp:Label ID="CountryLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+          AssociatedControlID="CountryDropDownList"></asp:Label>
+     <asp:DropDownList ID="CountryDropDownList" runat="server" Width="200px">
+         <asp:ListItem Value="-1">----- Select Country -----</asp:ListItem>
+         <asp:ListItem>Jordan </asp:ListItem>
+         <asp:ListItem>Lebanon </asp:ListItem>
+         <asp:ListItem>Palestine </asp:ListItem>
+         <asp:ListItem>Syria </asp:ListItem>
+         <asp:ListItem>Iraq</asp:ListItem>
+         <asp:ListItem>Kuwait </asp:ListItem>
+         <asp:ListItem>Saudi Arabia </asp:ListItem>
+         <asp:ListItem>Qatar </asp:ListItem>
+         <asp:ListItem>UAE </asp:ListItem>
+         <asp:ListItem>Oman </asp:ListItem>
+         <asp:ListItem>Yemen </asp:ListItem>
+         <asp:ListItem>Bahrain </asp:ListItem>
+         <asp:ListItem>Egypt </asp:ListItem>
+         <asp:ListItem>Sudan </asp:ListItem>
+         <asp:ListItem>Libya </asp:ListItem>
+         <asp:ListItem>Tunis </asp:ListItem>
+         <asp:ListItem>Morocco</asp:ListItem>
+         <asp:ListItem>Algeria </asp:ListItem>
+     </asp:DropDownList>
+     <asp:CompareValidator ID="CompareValidator3" runat="server" 
+         ControlToCompare="RangeTextBox" ControlToValidate="CountryDropDownList" 
+         ErrorMessage="*" ForeColor="" Operator="NotEqual"></asp:CompareValidator>
+</div> 
+ 
+ <div class="FloatLeft DivLabel">
+    <asp:Label ID="SpecializationLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+         AssociatedControlID="SpecializationDropDownList"></asp:Label>
+    
+     <asp:DropDownList ID="SpecializationDropDownList" runat="server" CssClass="Careers_TextBox FloatLeft">
+         <asp:ListItem Value="-1">----- Select Specialization -----</asp:ListItem>
+         <asp:ListItem>Computer Engineer</asp:ListItem>
+         <asp:ListItem>Architect Engineer</asp:ListItem>
+         <asp:ListItem>Doctor</asp:ListItem>
+     </asp:DropDownList>
+     
+     <asp:CompareValidator ID="CompareValidator1" runat="server" 
+         ControlToCompare="RangeTextBox" 
+         ControlToValidate="SpecializationDropDownList" ErrorMessage="*" ForeColor="" 
+         Operator="NotEqual" SetFocusOnError="True"></asp:CompareValidator>
+    
+</div>
+ <br class="ClearBoth" />
+ 
+ <div class="FloatLeft DivLabel" style="direction: ltr">
+    <asp:Label ID="ExperienceYearsLabel" runat="server" 
+         CssClass="Careers_Label FloatLeft" 
+         AssociatedControlID="ExperienceYearsDropDownList" ></asp:Label>
+    
+     <asp:DropDownList ID="ExperienceYearsDropDownList" runat="server" Width="200px">
+         <asp:ListItem Value="-1">----- Experience Years -----</asp:ListItem>
+         <asp:ListItem>1</asp:ListItem>
+         <asp:ListItem>2</asp:ListItem>
+         <asp:ListItem>3</asp:ListItem>
+         <asp:ListItem>4</asp:ListItem>
+         <asp:ListItem>5</asp:ListItem>
+         <asp:ListItem>6</asp:ListItem>
+         <asp:ListItem>7</asp:ListItem>
+         <asp:ListItem>8</asp:ListItem>
+         <asp:ListItem>9</asp:ListItem>
+         <asp:ListItem>10</asp:ListItem>
+         <asp:ListItem>11</asp:ListItem>
+         <asp:ListItem>12</asp:ListItem>
+         <asp:ListItem>13</asp:ListItem>
+         <asp:ListItem>14</asp:ListItem>
+         <asp:ListItem>15</asp:ListItem>
+         <asp:ListItem>16</asp:ListItem>
+         <asp:ListItem>17</asp:ListItem>
+         <asp:ListItem>18</asp:ListItem>
+         <asp:ListItem>19</asp:ListItem>
+         <asp:ListItem>20</asp:ListItem>
+         <asp:ListItem>21</asp:ListItem>
+         <asp:ListItem>22</asp:ListItem>
+         <asp:ListItem>23</asp:ListItem>
+         <asp:ListItem>24</asp:ListItem>
+         <asp:ListItem>25</asp:ListItem>
+         <asp:ListItem Value="26">26 and more</asp:ListItem>
+     </asp:DropDownList>
+     <asp:CompareValidator ID="CompareValidator2" runat="server" 
+         ControlToCompare="RangeTextBox" ControlToValidate="ExperienceYearsDropDownList" 
+         ErrorMessage="*" ForeColor="" Operator="NotEqual"></asp:CompareValidator>
+    
+</div>
+ <br class="ClearBoth" />
+ 
+ 
+  <div class="FloatLeft DivLabel">
+    <asp:Label ID="PMPHolderLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+          AssociatedControlID="PMPHolderDropDownList"></asp:Label>
+      
+    <asp:DropDownList ID="PMPHolderDropDownList" runat="server" CssClass="Careers_TextBox FloatLeft">
+         <asp:ListItem>Yes</asp:ListItem>
+         <asp:ListItem>No</asp:ListItem>
+     </asp:DropDownList>
+    
+      <br />
+    
+</div>
+ <br class="ClearBoth" /> 
+ 
+ 
+
+
+  <div class="FloatLeft DivLabel">
+    <asp:Label ID="PhoneLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+          AssociatedControlID="PhoneTextBox"></asp:Label>
+    
+    <asp:TextBox ID="PhoneTextBox" runat="server" CssClass="Careers_TextBox FloatLeft"></asp:TextBox>
+    
+    
+                  <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                      ControlToValidate="PhoneTextBox" 
+                      ErrorMessage="Numbers Only" 
+                      ForeColor="" MaximumValue="99999999999999" MinimumValue="0" 
+                      SetFocusOnError="True" Type="Double" Display="Dynamic"></asp:RangeValidator>
+   
+    
+</div>
+ <br class="ClearBoth" />
+ 
+   <div class="FloatLeft DivLabel">
+    <asp:Label ID="UploadCVLabel" runat="server" CssClass="Careers_Label FloatLeft" 
+          AssociatedControlID="CVFileUpload"></asp:Label>
+      
+       <asp:FileUpload ID="CVFileUpload" runat="server" />
+    
+       <asp:Label ID="Label1" runat="server" CssClass="Careers_Label FloatLeft" 
+           Text="400KB, *.doc *.docx *.pdf"></asp:Label>
+    
+      <br />
+    
+</div>
+ &nbsp;<br class="ClearBoth" />
+        
+            <asp:Button ID="SubmitButton" runat="server" CssClass="Careers_SubmitButton MarginCenter" onclick="SubmitButton_Click"  Text="Submit" />
+            
+       </asp:Panel>
+        </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="SubmitButton" />
+            </Triggers>
+    </asp:UpdatePanel>
+    
+
+ 
+
+
+   <br class="ClearBoth" />
+ </div>
+
+</div>

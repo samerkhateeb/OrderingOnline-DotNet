@@ -1,0 +1,37 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_Questionnaire.ascx.cs" Inherits="Portals_Controls_UC_Questionnaire" %>
+<%@ Import Namespace="KFGCMS.BLL" %>
+<div class="Course_Wide_Div">
+
+ <div class="Course_Wide_HeaderDiv">
+                            <div class="SFloatLeft" >
+                                <img id="Img2" src="../Themes/CssImages/Container_Mid_Header_Left.gif" runat="server" />
+                            </div>
+                            <div class="SFloatRight" >
+                                <img id="Img3" src="../Themes/CssImages/Container_Mid_Header_Right.gif" runat="server" />
+                            </div>
+                                <asp:Label ID="HeaderLabel" runat="server" CssClass="Course_Wide_HeaderLabel" SkinID="NoSkin"></asp:Label>
+</div>
+
+<div class="Course_Wide_BodyDiv">
+ <asp:Label ID="ResultLabel" runat="server"></asp:Label>
+ 
+<asp:GridView ID="QuestionnaireGridView" runat="server" 
+    AutoGenerateColumns="False" ShowHeader="False">
+    <Columns>
+        <asp:TemplateField>
+            <ItemTemplate>
+            <div class="Questionnaire_Row">
+                <asp:HyperLink ID="QuestionnaireHyperLink" runat="server" CssClass="Questionnaire_LinkButton" 
+                    NavigateUrl='<%#"~/Portals/QuestionnaireDetails?Info="+ Global_BLL.EncodeUrl(String.Format("QuestionnaireID={0}&GroupID={1}&Language={2}",Eval("Questionnaire_ID"),QueryString_Info.GroupID, QueryString_Info.Language)) %>'
+                    Text='<%# Eval("Questionnaire_Name") %>' 
+                    ToolTip='<%# Eval("Questionnaire_Description") %>'></asp:HyperLink>
+                    
+                </div>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+
+</div>
+
+</div>

@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\bin\Debug\Menu_Module.dll
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\bin\Debug\Menu_Module.pdb
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\Menu_Module.dll
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\Menu_Module.pdb
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\bin\Debug\Menu_Module.dll
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\bin\Debug\Menu_Module.pdb
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\Menu_Module.dll
+\Web\wwwroot\Modules\Menu\Menu\Menu_Module\obj\Debug\Menu_Module.pdb

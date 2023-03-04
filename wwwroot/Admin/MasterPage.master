@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPageControlPanel" Codebehind="MasterPage.master.cs" %>
+
+<%@ Register src="Controls/SearchHome/SearchHome.ascx" tagname="SearchHome" tagprefix="KFG" %>
+
+<%@ Register src="Controls/Menu/Menu_Left.ascx" tagname="Menu_Left" tagprefix="KFG" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="/App_Themes/AdminSkin/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="/Assets/Files/Admin/favicon.ico" runat="server" type="image/x-icon" rel="shortcut icon">
+    <title>Untitled Page</title>
+  
+</head>
+
+
+
+<body dir="ltr" >
+    <form id="form1" runat="server">
+    
+    <div class="Header_Div">
+          <img class="Header_Div_Logo" src="images/Header_Logo.png" />
+          
+          <br class="ClearBoth" />
+
+          <div class="Header_Div_Tab FloatRight MarginRight35">
+            
+            <KFG:SearchHome ID="SearchHomeControl" runat="server" />
+
+            <div class="Header_Tab_Div">
+                  <div class="Header_Tab_Item_Div FloatLeft">
+                    <a href="Default.aspx" class="Header_Tab_Home_Link">Home</a>
+                  </div>
+
+                  <div class="Header_Tab_Item_Div FloatLeft">
+                  <a href="Default.aspx" class="Header_Tab_Support_Link">Support</a>
+                  </div>
+
+                  <div class="Header_Tab_Item_Div FloatLeft">
+                  <a href="logout.aspx" class="Header_Tab_Logout_Link" runat="server">Logout</a>
+                  </div>
+
+            </div>
+          </div>
+
+
+
+    </div>
+           
+           
+            
+            
+  
+    <div class="Site_Body">
+    
+    
+    <div class="Container_Left FloatLeft MarginLeft10">
+    
+        <KFG:Menu_Left ID="Menu_LeftControl" runat="server" />
+    
+    </div>
+
+    
+       <div class="Container_Right FloatLeft MarginLeft20">
+            <div class="SiteMapDiv">
+                <asp:Label ID="SiteMapPathLabel" runat="server" CssClass="SiteMapPath"></asp:Label>
+                <asp:Label ID="PagesSiteMapLabel" runat="server" CssClass="SiteMapPath"></asp:Label>
+            </div>
+            
+            
+            <br class="ClearBoth" />
+            <div class="MainContainerDiv">
+
+                        <asp:ScriptManager ID="PageScriptManager" runat="server">
+                        </asp:ScriptManager>
+
+                        <asp:contentplaceholder id="BodyContentPlaceHolder" runat="server">
+                        </asp:contentplaceholder>
+            <br class="ClearBoth" />
+
+                       
+                </div>
+            </div>
+            
+
+            <%--    <asp:SqlDataSource ID="SettengsSqlDataSource" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:Plex_ConnectionString %>" 
+                    SelectCommand="SELECT CP_Page_ID, CP_Page_RuleID, CP_Page_Thumbnail, CP_Page_Description, CP_Page_StaticLink, CP_Page_Name FROM CP_Pages WHERE (CP_Page_Status = @CP_Page_Status) AND (CP_Page_RuleID &lt;= @CP_Page_RuleID)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="true" Name="CP_Page_Status" Type="Boolean" />
+                        <asp:CookieParameter CookieName="UserRuleID" Name="CP_Page_RuleID" 
+                            Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+        --%>
+        
+        
+            <br class="ClearBoth" />
+
+    
+            <%--<div class="FooterDiv">
+                <img class="Footer_Left FloatLeft" src="images\spaceball.gif" />
+                <img class="Footer_Right FloatRight" src="images\spaceball.gif" />
+            </div>--%>
+    
+    </div>
+   
+    </form>
+   
+   
+</body>
+</html>

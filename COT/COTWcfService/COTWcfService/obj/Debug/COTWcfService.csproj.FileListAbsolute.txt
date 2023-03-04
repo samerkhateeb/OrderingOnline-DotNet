@@ -1,0 +1,5 @@
+\Web\COT\COTWcfService\COTWcfService\bin\COTWcfService.dll
+\Web\COT\COTWcfService\COTWcfService\bin\COTWcfService.pdb
+\Web\COT\COTWcfService\COTWcfService\obj\Debug\ResolveAssemblyReference.cache
+\Web\COT\COTWcfService\COTWcfService\obj\Debug\COTWcfService.dll
+\Web\COT\COTWcfService\COTWcfService\obj\Debug\COTWcfService.pdb

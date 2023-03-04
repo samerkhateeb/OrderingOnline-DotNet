@@ -1,0 +1,34 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_Courses.ascx.cs" Inherits="Portals_Controls_UC_Courses" %>
+<%@ Import Namespace="KFGCMS.BLL" %>
+
+<asp:GridView ID="CoursesGridView" runat="server" AutoGenerateColumns="False" 
+        DataKeyNames="ID" GridLines="None" CellPadding="0" CellSpacing="0" SkinID="NoSkin" ShowHeader="False"  Width="675px" >
+    <Columns>
+        <asp:TemplateField>
+        
+            <ItemTemplate>
+            
+                <div class="ContainerBigBodyDiv">
+               
+                    <div class="MidContainerRow">
+                                <div class="MicDontainerRowText">
+                                    <asp:Image ID="ThumbnailImage" ImageAlign="left" ImageUrl='<%#String.Format("../{0}",Global_BLL.FilterImagePathToThumbnail(Eval("Thumbnail"))) %>' 
+                                        SkinID="NoSkin" CssClass="FloatLeft MidContainer_Row_Thumbnail" runat="server" />
+                                         
+                                     <asp:HyperLink ID="MidHyperLink" Text='<%# Eval("Name") %>' NavigateUrl='<%# String.Format("{0}/Portals/CourseDetails?CourseID={1}",ConfigurationManager.AppSettings["PortalAlias"],Eval("ID"))  %>' CssClass="MidContainer_Row_LinkButton FloatLeft" SkinID="NoSkin" runat="server"></asp:HyperLink>
+                                    <br /><br />
+                                    <p class="SpaceH10" />
+                                    
+                                    <asp:Label ID="DescriptionLabel" Text='<%# Pages_BLL.FilterDescriptionText(Eval("Description"),500)%>' CssClass="Description" SkinID="NoSkin" runat="server" ></asp:Label>
+                                </div>
+                                <br class="ClearBoth" />
+                                <hr class="MarginCenter" />
+                    </div>
+                             
+                </div>
+                
+               
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>

@@ -1,0 +1,137 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+public partial class Portals_Controls_UC_CoursesUsers : System.Web.UI.UserControl
+{
+    int loopIndex = 0, TablesCount = 0;
+
+
+
+    public String EmptyCourse
+    {
+
+        set
+        {
+            EmptyTextLabel.Text = value;
+        }
+    }
+
+
+
+
+     public DataSet DataContent
+    {
+        set
+        {
+            DataSet dataSet = value;
+            TablesCount = dataSet.Tables.Count;
+
+            if (TablesCount != 0)
+            {
+                DataTable MasterDataTable = dataSet.Tables[0],
+                            ParentDataTable = MasterDataTable.DefaultView.ToTable(true, "ParentID", "Parent_Title");
+
+                DataView MasterDataView = dataSet.Tables[0].DefaultView;
+
+
+
+                // dataView.RowFilter = "ParentID=" + dataTable.Rows[0]["parentid"];
+                DataRow rowView = dataSet.Tables[0].Rows[0];
+                //DataTable masterDataTable = new DataTable();
+                //masterDataTable.Columns.Add(new DataColumn("ParentID"));
+
+                //// this to create parent rows according to the tables inside it.
+                //for (loopIndex = 0; loopIndex < TablesCount; loopIndex++)
+                //    masterDataTable.ImportRow(rowView);
+
+                // bind it to parent gridview 
+                CoursesGridView.DataSource = ParentDataTable;
+                CoursesGridView.DataBind();
+                loopIndex = 0;
+
+                HyperLink MediaHyperLink, DocHyperLink;
+                Label OtherAttachedLabel;
+                foreach (GridViewRow GridRow in CoursesGridView.Rows)
+                {
+                    // filter Master DataView
+                    MasterDataView.RowFilter = "ParentID=" + ParentDataTable.Rows[GridRow.RowIndex]["ParentID"];
+                    
+                    // Init GridView Table
+                    GridView ChildGridView = (GridView)GridRow.FindControl("LessonsGridView");
+                    ChildGridView.DataSource = MasterDataView;
+                    ChildGridView.DataBind();
+
+
+                    // Init GridView Header
+                    GridViewRow HeaderRow = ChildGridView.HeaderRow,
+                                FooterRow = ChildGridView.FooterRow;
+                    Label HeaderLabel = GridRow.FindControl("HeaderLabel") as Label;
+
+                    if (HeaderLabel != null)
+                    {
+                        HeaderLabel.Text = ParentDataTable.Rows[GridRow.RowIndex]["PARENT_TITLE"].ToString();
+                        HeaderLabel.DataBind();
+                    }
+
+
+                    // Init GridView Rows Links
+                    foreach (GridViewRow GridRowChild in ChildGridView.Rows)
+                    {
+
+                        if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["MediaAttach"].ToString()))
+                        {
+                            MediaHyperLink = GridRowChild.FindControl("MediaPlayerHyperLink") as HyperLink;
+                            if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["MediaAttach_Status"].ToString()))
+                                MediaHyperLink.Visible = (bool)MasterDataView[GridRowChild.RowIndex]["MediaAttach_Status"];
+
+                            MediaHyperLink.NavigateUrl = "javascript:void(0);";
+                            MediaHyperLink.Attributes.Add("onclick", String.Format("javascript:PopupWindow('{0}')", String.Format("{0}/Portals/CoursesDownload?LsnID={1}&FType=1&CourseID={2}", ConfigurationManager.AppSettings["PortalAlias"], MasterDataView[GridRowChild.RowIndex]["ID"], MasterDataView[GridRowChild.RowIndex]["ParentID"])));
+                            MediaHyperLink.DataBind();
+                        }
+
+                        if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["DocumentAttach"].ToString()))
+                        {
+                            DocHyperLink = GridRowChild.FindControl("DocHyperLink") as HyperLink;
+                            if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["DocAttach_Status"].ToString()))
+                                DocHyperLink.Visible = (bool)MasterDataView[GridRowChild.RowIndex]["DocAttach_Status"];
+
+                            DocHyperLink.NavigateUrl = "javascript:void(0);";
+                            DocHyperLink.Attributes.Add("onclick", String.Format("javascript:PopupWindow('{0}')", String.Format("{0}/Portals/CoursesDownload?LsnID={1}&FType=2&CourseID={2}", ConfigurationManager.AppSettings["PortalAlias"], MasterDataView[GridRowChild.RowIndex]["ID"], MasterDataView[GridRowChild.RowIndex]["ParentID"])));
+                            DocHyperLink.DataBind();
+                        }
+
+                        if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["ATTACHED"].ToString()))
+                        {
+                            OtherAttachedLabel = GridRowChild.FindControl("OtherAttachedLabel") as Label;
+                            OtherAttachedLabel.Text = MasterDataView[GridRowChild.RowIndex]["ATTACHED"].ToString();
+
+                            if (!String.IsNullOrEmpty(MasterDataView[GridRowChild.RowIndex]["Attach_Status"].ToString()))
+                                OtherAttachedLabel.Visible = (bool)MasterDataView[GridRowChild.RowIndex]["Attach_Status"];
+
+                            OtherAttachedLabel.DataBind();
+                        }
+
+                    }
+
+
+
+
+                    loopIndex++;
+
+                }
+            }
+            
+        }
+
+    }
+}

@@ -1,0 +1,10 @@
+\Web\wwwroot\bin\Search.dll
+\Web\wwwroot\bin\Search.pdb
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\Search.dll
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\Search.pdb
+\Web\wwwroot\bin\Search.dll
+\Web\wwwroot\bin\Search.pdb
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\Search.dll
+\Web\wwwroot\Modules\Search\Search\Search\obj\Debug\Search.pdb

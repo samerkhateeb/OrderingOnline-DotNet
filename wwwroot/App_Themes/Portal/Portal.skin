@@ -1,0 +1,47 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+
+
+<asp:HyperLink runat="server" CssClass="LinkButton" />
+<asp:HyperLink runat="server" SkinID="LinkButtonHeaderSkin" CssClass="LinkButtonHeader" />
+<asp:HyperLink runat="server" SkinID="HyperTopMenuSkin" CssClass="HyperTopMeu" />
+<asp:HyperLink runat="server" SkinID="ItemLinkButtonSkin" CssClass="ItemLinkButton" />
+
+<asp:Label runat="server" CssClass="Label" />
+<asp:Label runat="server" SkinID="LabelHeaderSkin" CssClass="LabelHeader" />
+<asp:Label runat="server" SkinID="LabelDescriptionSkin" CssClass="LabelDescription" />
+<asp:Label runat="server" SkinID="LabelDateSkin" CssClass="LabelDate" />
+<asp:Label runat="server" SkinID="FastNewsLabelSkin" CssClass="FastNewsLabel" />
+<asp:Label runat="server" SkinID="PageBodySkin" CssClass="PageBody" />
+<asp:Label runat="server" SkinID="LabelFormSkin" CssClass="LabelForm" />
+
+<asp:Label runat="server" SkinID="HotNewsDescriptionTextSkin" CssClass="HotNewsDescriptionText" />
+<asp:Label runat="server" SkinID="ContainerHeaderTextSkin" CssClass="ContainerHeaderText" />
+<asp:TextBox CssClass="TextBox" runat="server"/>
+--%>
+
+<asp:RequiredFieldValidator runat="server" CssClass="Validation" />
+<asp:RangeValidator runat="server" CssClass="Validation" ></asp:RangeValidator>
+<asp:CompareValidator runat="server"  CssClass="Validation"></asp:CompareValidator>
+                          
+                      
+<asp:RegularExpressionValidator runat="server" CssClass="Validation"   />
+
+<asp:GridView runat="server" CellPadding="0" GridLines="none" BorderWidth="0" AllowSorting="False" >
+       
+</asp:GridView>
+
+<asp:CustomValidator  runat="server" Display="Dynamic" SkinID="CustomValidationSkin" CssClass="CustomValidation"></asp:CustomValidator>
+

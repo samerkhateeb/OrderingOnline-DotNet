@@ -1,0 +1,10 @@
+\Web\KFGCMS.INFO\bin\Debug\KFGCMS.INFO.dll
+\Web\KFGCMS.INFO\bin\Debug\KFGCMS.INFO.pdb
+\Web\KFGCMS.INFO\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFGCMS.INFO\obj\Debug\KFGCMS.INFO.dll
+\Web\KFGCMS.INFO\obj\Debug\KFGCMS.INFO.pdb
+\Web\KFGCMS.INFO\bin\Debug\KFGCMS.INFO.dll
+\Web\KFGCMS.INFO\bin\Debug\KFGCMS.INFO.pdb
+\Web\KFGCMS.INFO\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFGCMS.INFO\obj\Debug\KFGCMS.INFO.dll
+\Web\KFGCMS.INFO\obj\Debug\KFGCMS.INFO.pdb

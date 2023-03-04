@@ -1,0 +1,7 @@
+\Web\wwwroot\Modules\Banner\Banner\Banner\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Banner\Banner\Banner\bin\Banner.dll
+\Web\wwwroot\Modules\Banner\Banner\Banner\bin\Banner.pdb
+\Web\wwwroot\Modules\Banner\Banner\Banner\obj\Debug\Banner.dll
+\Web\wwwroot\Modules\Banner\Banner\Banner\obj\Debug\Banner.pdb
+\Web\wwwroot\bin\Banner.dll
+\Web\wwwroot\bin\Banner.pdb

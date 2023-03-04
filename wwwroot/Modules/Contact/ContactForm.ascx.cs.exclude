@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+using CKEditor.NET;
+
+public partial class Portals_Controls_ContactForm : System.Web.UI.UserControl
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        SuccessLabel.Visible = false;
+
+        if (!IsPostBack)
+        {
+            NameLabel.Text = Site_Info.ContactUs_Name;
+            EmailLabel.Text = Site_Info.ContactUs_Email;
+            DepartmentLabel.Text = Site_Info.ContactUs_Department;
+            MessageLabel.Text = Site_Info.ContactUs_Message;
+            SendLinkButton.Text = Site_Info.ContactUs_SendButton;
+            EmailRegularExpressionValidator.Text = Site_Info.ContactUs_ValidationEmail;
+            MessageRequiredFieldValidator.Text = Site_Info.ContactUs_ValidationMessage;
+        }
+        
+    }
+
+
+    protected void SendLinkButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Contact_BLL.SendContact(NameTextBox.Text, EmailTextBox.Text, SideDropDownList.SelectedItem.Text, CommentEditor.Text);
+            NameTextBox.Text = "";
+            EmailTextBox.Text = "";
+            SideDropDownList.SelectedIndex = 0;
+            CommentEditor.Text = "";
+            SuccessLabel.Visible = true;
+
+            Page.Title = String.Format("{0} :: Contact Form", ConfigurationManager.AppSettings["PagesTitle"]);
+
+            try
+            {
+                Contact_BLL.SendEmail("الإتصال مع خطابة", EmailTextBox.Text, "info@khattabeh.com", CommentEditor.Text);
+            }
+            catch
+            {
+                
+                
+            }
+        }
+
+        catch (Exception exc)
+        {
+            ExceptionsLog_BLL.SaveException(exc, "Portal.UI", this.GetType().Name);
+            SuccessLabel.Visible = false;
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+}

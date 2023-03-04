@@ -1,0 +1,111 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_Course_SignUp.ascx.cs" Inherits="Portals_Controls_UC_Course_SignUp" %>
+<div class="Course_Wide_Div">
+ <div class="Course_Wide_HeaderDiv">
+                            <div class="SFloatLeft" >
+                                <img id="Img2" src="../Themes/CssImages/Container_Mid_Header_Left.gif" runat="server" />
+                            </div>
+                            <div class="SFloatRight" >
+                                <img id="Img3" src="../Themes/CssImages/Container_Mid_Header_Right.gif" runat="server" />
+                            </div>
+                            
+    <asp:Label ID="HeaderLabel" runat="server" Text="Signup Form" CssClass="Course_Wide_HeaderLabel" 
+                                SkinID="NoSkin"></asp:Label>
+</div>
+
+<div class="Course_Wide_BodyDiv">
+
+    <asp:UpdateProgress ID="SignupUpdateProgress" runat="server" 
+        AssociatedUpdatePanelID="SignupUpdatePanel">
+        <ProgressTemplate>
+            <img src="../Themes/CssImages/loadingAnimation.gif" style="width: 208px; height: 13px" />
+        </ProgressTemplate>
+    
+    </asp:UpdateProgress>
+    
+    <asp:UpdatePanel ID="SignupUpdatePanel" runat="server">
+    <ContentTemplate>
+    
+<div class="Course_Wide_Row FloatLeft">
+<asp:Label ID="NameLabel" runat="server" Text="Name" 
+        AssociatedControlID="NameTextBox" CssClass="Course_Wide_Label FloatLeft" 
+        SkinID="NoSkin"></asp:Label>
+<asp:TextBox ID="NameTextBox" runat="server" ValidationGroup="SignUp" Width="250px" 
+        CssClass="Careers_TextBox"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+        ControlToValidate="NameTextBox" ErrorMessage="*" 
+        ValidationGroup="SignUp" SetFocusOnError="True" Display="Dynamic"></asp:RequiredFieldValidator>
+</div>
+<br class="ClearBoth" />
+<div class="Course_Wide_Row FloatLeft">
+<asp:Label ID="PasswordLabel" runat="server" Text="Password" 
+        AssociatedControlID="PasswordTextBox" 
+        CssClass="Course_Wide_Label FloatLeft" SkinID="NoSkin" ></asp:Label>
+<asp:TextBox ID="PasswordTextBox" runat="server" TextMode="Password" 
+        ValidationGroup="SignUp" Width="250px" CssClass="Careers_TextBox"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+        ControlToValidate="PasswordTextBox" ErrorMessage="*" 
+        ValidationGroup="SignUp" SetFocusOnError="True" Display="Dynamic"></asp:RequiredFieldValidator>
+</div>
+<br class="ClearBoth" />
+<div class="Course_Wide_Row FloatLeft">
+<asp:Label ID="PasswordConfirmLabel" runat="server" Text="Confirm Password" 
+        AssociatedControlID="ConfirmTextBox" 
+        CssClass="Course_Wide_Label FloatLeft" SkinID="NoSkin"></asp:Label>
+<asp:TextBox ID="ConfirmTextBox" runat="server" TextMode="Password" 
+        ValidationGroup="SignUp" Width="250px" CssClass="Careers_TextBox"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+        ControlToValidate="ConfirmTextBox" ErrorMessage="*" 
+        ValidationGroup="SignUp" Display="Dynamic" SetFocusOnError="True" 
+        style="direction: ltr"></asp:RequiredFieldValidator>
+    <asp:CompareValidator ID="CompareValidator1" runat="server" 
+        ControlToCompare="PasswordTextBox" ControlToValidate="ConfirmTextBox" 
+        ErrorMessage="*" ValidationGroup="SignUp" Display="Dynamic"></asp:CompareValidator>
+</div>
+
+<br class="ClearBoth" />
+<div class="Course_Wide_Row FloatLeft">
+<asp:Label ID="EmailLabel" runat="server" Text="Email" 
+        AssociatedControlID="EmailTextBox" CssClass="Course_Wide_Label FloatLeft" 
+        SkinID="NoSkin"></asp:Label>
+<asp:TextBox ID="EmailTextBox" runat="server" ValidationGroup="SignUp" 
+        Width="250px" CssClass="Careers_TextBox"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+        ControlToValidate="EmailTextBox" ErrorMessage="*" 
+        ValidationGroup="SignUp" Display="Dynamic" SetFocusOnError="True"></asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+        ControlToValidate="EmailTextBox" Display="Dynamic" ErrorMessage="*" 
+        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+        ValidationGroup="SignUp"></asp:RegularExpressionValidator>
+</div>
+
+<br class="ClearBoth" />
+<div class="Course_Wide_Row FloatLeft">
+<asp:Label ID="PhoneLabel" runat="server" Text="Phone" 
+        AssociatedControlID="PhoneTextBox" CssClass="Course_Wide_Label FloatLeft" 
+        SkinID="NoSkin"></asp:Label>
+<asp:TextBox ID="PhoneTextBox" runat="server" ValidationGroup="SignUp" 
+        Width="250px" CssClass="Careers_TextBox"></asp:TextBox>
+</div>
+
+<br class="ClearBoth" />
+<div class="Course_Wide_Row FloatLeft" style="direction: ltr">
+<asp:Label ID="CommentLabel" runat="server" Text="Comment" 
+        AssociatedControlID="CommentsTextBox" 
+        CssClass="Course_Wide_Label FloatLeft" SkinID="NoSkin"></asp:Label>
+<asp:TextBox ID="CommentsTextBox" runat="server" TextMode="MultiLine" Height="91px" 
+        Width="250px" ValidationGroup="SignUp" CssClass="Careers_TextBox"></asp:TextBox>
+</div>
+<br class="ClearBoth" />
+
+<asp:Label ID="StatusLabel" runat="server" CssClass="Course_Wide_Label_Small" Visible="False"></asp:Label>
+<br class="ClearBoth" />
+    <asp:Button ID="SubmitButton" runat="server" Text="Sign Up Here" 
+        ValidationGroup="SignUp" onclick="SubmitButton_Click" 
+            CssClass="Careers_SubmitButton MarginCenter" />
+    
+<br class="ClearBoth" />
+
+    </ContentTemplate>
+        </asp:UpdatePanel>
+</div>
+</div>

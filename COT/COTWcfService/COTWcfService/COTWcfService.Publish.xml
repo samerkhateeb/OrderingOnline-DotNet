@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\COT" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="CustomerWCF.svc" publishTime="05/30/2012 12:59:03" />
+    <file relUrl="bin/COTWcfService.pdb" publishTime="05/30/2012 16:32:46" />
+    <file relUrl="bin/COTWcfService.dll" publishTime="05/30/2012 16:32:46" />
+    <file relUrl="Web.config" publishTime="05/30/2012 12:59:45" />
+  </publishProfile>
+</publishData>

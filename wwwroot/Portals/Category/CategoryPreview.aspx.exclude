@@ -1,0 +1,24 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAJAX.master" AutoEventWireup="true" Theme="Portal" CodeFile="CategoryPreview.aspx.cs" Inherits="Portals_Content_CategoryPreview" Title="Untitled Page" %>
+<%@ MasterType VirtualPath="~/MasterPageAJAX.master" %>
+
+<%@ Register src="~/Modules/Left/UC_LeftContainer.ascx" tagname="UC_LeftContainer" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Banner/UC_Banner.ascx" tagname="UC_Banner" tagprefix="Plex" %>
+<%@ Register src="~/Modules/CategorySubpages/UC_CategorySubPages.ascx" tagname="UC_CategorySubPages" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Menu/UC_Menu.ascx" tagname="UC_Menu" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Groups/UC_SPGroups.ascx" tagname="UC_SPGroups" tagprefix="Plex" %>
+
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
+    
+    <div class="Container_Left_Div FloatLeft">
+        <Plex:UC_Banner ID="UC_BannerSubPage" runat="server" />
+        <Plex:UC_LeftContainer ID="UC_LeftContainerControl" runat="server" />
+    </div>
+     <div class="Container_Right_Div FloatRight">
+        <Plex:UC_CategorySubPages ID="UC_CategorySubPagesControl" runat="server" />
+    </div>
+    
+    
+    
+</asp:Content>
+

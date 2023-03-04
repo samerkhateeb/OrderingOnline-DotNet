@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\OrderOnline" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/es/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/OrderOnline.pdb" publishTime="09/17/2012 17:40:48" />
+    <file relUrl="OrderList.ascx" publishTime="09/23/2012 15:54:54" />
+    <file relUrl="bin/ru/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/zh-CHT/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/cs/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ar/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/zh-CHS/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/hi/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/OrderOnline.dll" publishTime="09/17/2012 17:40:48" />
+    <file relUrl="bin/pt/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/de/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/nl/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ko/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/he/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/AjaxControlToolkit.pdb" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="Scripts/OrderList.js" publishTime="09/26/2012 18:02:49" />
+    <file relUrl="bin/ja/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/tr-TR/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/fr/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/it/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+  </publishProfile>
+</publishData>

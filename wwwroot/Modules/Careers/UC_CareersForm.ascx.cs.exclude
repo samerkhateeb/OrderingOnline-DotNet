@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using KFGCMS.BLL;
+using System.IO;
+using KFGCMS.Info;
+
+public partial class Portals_Controls_UC_CareersForm : System.Web.UI.UserControl
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            HeaderLabel.Text = Site_Info.Careers_Header;
+            HeaderLabel.DataBind();
+
+            NameLabel.Text = Site_Info.Careers_Name;
+            EmailLabel.Text = Site_Info.Careers_Email;
+            PhoneLabel.Text = Site_Info.Careers_Phone;
+            SpecializationLabel.Text = Site_Info.Careers_Specialist;
+            ExperienceYearsLabel.Text = Site_Info.Careers_ExperienceYears;
+            PMPHolderLabel.Text = Site_Info.Careers_PMPHolder;
+            CountryLabel.Text = Site_Info.Careers_Country;
+
+            this.DataBind();
+
+        }
+
+    }
+
+    protected void SubmitButton_Click(object sender, EventArgs e)
+    {
+        string UploadedFile = "";
+        try
+        {
+       // System.Threading.Thread.Sleep(5000);
+        Careers_Info CareersInfo = new Careers_Info();
+        FileUpload_BLL FileUploadBLL = new  FileUpload_BLL();
+
+        if (!String.IsNullOrEmpty(CVFileUpload.PostedFile.FileName))
+            UploadedFile = FileUploadBLL.SaveAs(CVFileUpload.PostedFile);
+
+        if (UploadedFile.ToLower() != "error")
+        {
+            CareersInfo.Name = NameTextBox.Text;
+            CareersInfo.Email = EmailTextBox.Text;
+            if (!String.IsNullOrEmpty(PhoneTextBox.Text.Trim()))
+                CareersInfo.Phone = Convert.ToDouble(PhoneTextBox.Text);
+
+            CareersInfo.ExperienceYears = Convert.ToInt32(ExperienceYearsDropDownList.SelectedValue);
+            CareersInfo.PMPHolder = PMPHolderDropDownList.SelectedItem.Text;
+            CareersInfo.Specialization = SpecializationDropDownList.SelectedItem.Text;
+            CareersInfo.Country = CountryDropDownList.SelectedValue;
+
+            if (!String.IsNullOrEmpty(UploadedFile))
+            CareersInfo.CV = UploadedFile;
+
+            Careers_Bridge CareersBridge = new Careers_Bridge();
+            CareersBridge.Insert(CareersInfo);
+
+            ControlsPanel.Visible = false;
+            ControlsPanel.DataBind();
+
+            AttentionLabel.Text = Site_Info.Careers_ThanksLabel;
+            AttentionLabel.Visible = true;
+            AttentionLabel.DataBind();
+        }
+        else
+        {
+            AttentionLabel.Text = FileUpload_Info.ErrorMessage;
+            AttentionLabel.Visible = true;
+            AttentionLabel.DataBind();
+        }
+
+
+
+
+        }
+
+        catch   (Exception exc)
+        {
+            ExceptionsLog_BLL.SaveException(exc, "Portal.UI", this.GetType().Name);
+        }
+
+
+
+    }
+
+
+
+   
+}

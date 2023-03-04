@@ -1,0 +1,13 @@
+\Web\wwwroot\bin\OrderOnline.dll
+\Web\wwwroot\bin\OrderOnline.pdb
+\Web\wwwroot\Modules\OrderList\OrderOnline\OrderOnline\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\OrderList\OrderOnline\OrderOnline\obj\Debug\OrderOnline.dll
+\Web\wwwroot\Modules\OrderList\OrderOnline\OrderOnline\obj\Debug\OrderOnline.pdb
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\OrderOnline.dll
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\OrderOnline.pdb
+\Web\wwwroot\bin\OrderOnline.dll
+\Web\wwwroot\bin\OrderOnline.pdb
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\OrderOnline.dll
+\Web\wwwroot\Modules\OrderOnline\OrderOnline\OrderOnline\obj\Debug\OrderOnline.pdb

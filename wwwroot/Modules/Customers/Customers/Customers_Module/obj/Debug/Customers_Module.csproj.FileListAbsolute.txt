@@ -1,0 +1,8 @@
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\bin\Debug\Customers_Module.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\bin\Debug\Customers_Module.pdb
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\bin\Debug\KFGCMS.BLL.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\bin\Debug\KFGCMS.BLL.pdb
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\obj\Debug\Customers_Module.dll
+\Web\wwwroot\Modules\Customers\Customers\Customers_Module\obj\Debug\Customers_Module.pdb

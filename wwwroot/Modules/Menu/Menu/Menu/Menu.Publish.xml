@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\Menu" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Menu.ascx" publishTime="11/29/2012 16:35:51" />
+    <file relUrl="bin/KFGCMS.BLL.pdb" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/KFGCMS.BASE.dll" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.BASE.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.Utilities.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/Menu.pdb" publishTime="11/29/2012 16:46:38" />
+    <file relUrl="bin/KFGCMS.DAL.dll" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/KFGCMS.INFO.dll" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.INFO.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/Microsoft.ApplicationBlocks.Data.dll" publishTime="11/21/2012 15:26:36" />
+    <file relUrl="bin/KFGCMS.DAL.pdb" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/Menu.dll" publishTime="11/29/2012 16:46:38" />
+    <file relUrl="bin/KFGCMS.Utilities.dll" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="Script/Menu.js" publishTime="06/26/2012 12:00:53" />
+    <file relUrl="bin/KFGCMS.BLL.dll" publishTime="11/29/2012 16:40:52" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageCategories", "PageCategories\PageCategories.csproj", "{F4BE96C3-7F64-4318-BEBC-29BC3C0F3D3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4BE96C3-7F64-4318-BEBC-29BC3C0F3D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BE96C3-7F64-4318-BEBC-29BC3C0F3D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BE96C3-7F64-4318-BEBC-29BC3C0F3D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4BE96C3-7F64-4318-BEBC-29BC3C0F3D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

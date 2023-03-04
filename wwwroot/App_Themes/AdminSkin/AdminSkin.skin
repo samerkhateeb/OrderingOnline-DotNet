@@ -1,0 +1,56 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:GridView runat="server" CellPadding="4" GridLines="Horizontal" AllowSorting="True">
+        <HeaderStyle CssClass="GV_Header"/>
+        <FooterStyle CssClass="GV_Footer"/>
+        
+        <RowStyle CssClass="GV_Row"/>
+        <AlternatingRowStyle CssClass="GV_Row_Alt"/>
+
+        <EditRowStyle CssClass="GV_Row"/>
+        <SelectedRowStyle CssClass="GV_Row_Select"/>
+        
+        <PagerStyle CssClass="GV_Pager"/>
+        <EmptyDataRowStyle CssClass="GV_Empty"/>
+       
+</asp:GridView>
+
+<asp:LinkButton CssClass="LinkBtn" runat="server"  />
+<asp:LinkButton CssClass="DefaultPage_Link" runat="server" SkinID="DefaultPageLink"/>
+<asp:Button CssClass="Button" runat="server"  />
+
+<asp:HyperLink CssClass="DefaultPage_Link" runat="server" SkinID="DefaultPageLink" />
+<asp:CheckBox CssClass="CheckBox" runat="server"/>
+<asp:RadioButton CssClass="TextBox" runat="server" />
+<asp:RequiredFieldValidator runat="server" CssClass="Vlidation" />
+
+<asp:TextBox CssClass="TextBox" runat="server"/>
+<asp:TextBox CssClass="TextBox2" SkinID="TextBox2" runat="server"/>
+<asp:TextBox CssClass="TextBox3" SkinID="TextBox3" runat="server"/>
+<asp:TextBox CssClass="TextBox_Area" SkinID="TextBox_Area" runat="server"/>
+
+<asp:Label runat="server" CssClass="LabelHeader" SkinID="LabelHeader" />
+<asp:Label runat="server" CssClass="HeaderCollaps" SkinID="HeaderCollaps" />
+<asp:Label runat="server" CssClass="Label" />
+<asp:Label runat="server" CssClass="Label2" SkinID="Label2" />
+
+<asp:DropDownList runat="server" CssClass="DropDownList" />
+
+<asp:Panel runat="server" SkinID="PanelHeaderCollaps"  CssClass="PanelHeaderCollaps" />
+<asp:Panel runat="server" SkinID="HomePanelHeaderCollaps"  CssClass="HomePanelHeaderCollaps" />
+<asp:Panel runat="server" SkinID="BodyPanelCollaps"  CssClass="BodyPanelCollaps" />
+
+<asp:RadioButtonList runat="server" CssClass="Label" />

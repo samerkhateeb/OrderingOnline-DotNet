@@ -1,0 +1,19 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_CoursesDetails.ascx.cs" Inherits="Portals_Controls_UC_CoursesDetails" %>
+
+
+<div class="CourseDetails_Div">
+<div class="FloatLeft">
+    <asp:Label ID="HeaderLabel" CssClass="CourseDetails_Header" SkinID="NoSkin" runat="server" ></asp:Label>
+</div>
+<div class="FloatRight">
+<asp:HyperLink ID="COHyperLink" CssClass="coIcon FloatLeft" SkinID="NoSkin" ToolTip="Pay this Course from using 2CheckOut.com Now!!" runat="server"></asp:HyperLink>
+    <br class="ClearBoth" />
+    <asp:Label ID="PriceLabel" CssClass="Course_Fee_Label" SkinID="NoSkin" runat="server" ></asp:Label>
+</div>
+<br class="ClearBoth" />
+<div class="CourseDetails_Body_Div">
+    <asp:Image ID="ThumbnailImage" CssClass="CourseDetails_Thumbnail" runat="server" Visible="False" />
+    <asp:Label ID="BodyLabel" CssClass="CourseDetails_Body_Label" SkinID="Noskin" runat="server" ></asp:Label>
+</div>
+
+</div>

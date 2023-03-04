@@ -1,0 +1,6 @@
+\Web\KFG.CMS\bin\Debug\KFGCMS.dll
+\Web\KFG.CMS\bin\Debug\KFGCMS.pdb
+\Web\KFG.CMS\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+\Web\KFG.CMS\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.CMS\obj\Debug\KFGCMS.dll
+\Web\KFG.CMS\obj\Debug\KFGCMS.pdb

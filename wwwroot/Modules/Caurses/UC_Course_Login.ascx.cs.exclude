@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Controls_UC_Course_Login : System.Web.UI.UserControl
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            HeaderLabel.Text = Site_Info.LoginForm_Header;
+            HeaderLabel.DataBind();
+        }
+    }
+
+
+    protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
+    {
+        DataSet dataSet = Courses_BLL.CourseCheckStrongLogin(Login.UserName, Login.Password);
+        string Status = "0";
+
+        Status = dataSet.Tables[0].Rows.Count.ToString();
+
+        if (Status != "0")
+        {
+            HttpCookie cookie = new HttpCookie("CourseUser");
+            cookie["Course_UserName"] = HttpUtility.UrlEncode(Login.UserName.ToString());
+            cookie["Course_UserID"] = dataSet.Tables[0].Rows[0]["OE_User_ID"].ToString();
+            cookie["Course_UserPassword"] = HttpUtility.UrlEncode(Login.Password.ToString());
+            cookie["Course_GroupID"] = dataSet.Tables[0].Rows[0]["OE_User_GroupID"].ToString();
+
+            Response.Cookies.Add(cookie);
+
+            Courses_BLL.SaveQueryString("returnUrl");
+
+            if (Request.QueryString["returnUrl"] != null)
+                Response.Redirect("~/Portals/" + Request.QueryString["returnUrl"] + Courses_Info.CompleteQString);
+            else
+                Response.Redirect(String.Format("{0}{1}", ConfigurationManager.AppSettings["PortalAlias"], ConfigurationManager.AppSettings["WebsiteHome"]), false);
+
+        }
+
+        else
+            e.Authenticated = false;
+
+    }
+    protected void SignupLinkButton_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Portals/Courses_Signup?info=" + Request.QueryString["info"]);
+    }
+}

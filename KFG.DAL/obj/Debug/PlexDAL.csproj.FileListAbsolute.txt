@@ -1,0 +1,50 @@
+C:\Samer Computer\Work\PMP Arabia.com\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\Samer Computer\Work\PMP Arabia.com\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Samer Computer\Work\PMP Arabia.com\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+C:\Samer Computer\Work\ZASchool\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\Samer Computer\Work\ZASchool\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\Samer Computer\Work\ZASchool\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Samer Computer\Work\ZASchool\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\Samer Computer\Work\ZASchool\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+D:\Samer\ZASchool\Web\PlexDAL\bin\Debug\PlexDAL.dll
+D:\Samer\ZASchool\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+D:\Samer\ZASchool\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Samer\ZASchool\Web\PlexDAL\obj\Debug\PlexDAL.dll
+D:\Samer\ZASchool\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+D:\Samer\Khattabeh\Web\PlexDAL\bin\Debug\PlexDAL.dll
+D:\Samer\Khattabeh\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+D:\Samer\Khattabeh\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Samer\Khattabeh\Web\PlexDAL\obj\Debug\PlexDAL.dll
+D:\Samer\Khattabeh\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+E:\Samer\Khattabeh\PlexDAL\bin\Debug\PlexDAL.dll
+E:\Samer\Khattabeh\PlexDAL\bin\Debug\PlexDAL.pdb
+E:\Samer\Khattabeh\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+E:\Samer\Khattabeh\PlexDAL\obj\Debug\PlexDAL.dll
+E:\Samer\Khattabeh\PlexDAL\obj\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\Khattabeh\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\SamerComputer\Work\Khattabeh\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\Khattabeh\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\SamerComputer\Work\Khattabeh\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\SamerComputer\Work\Khattabeh\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\OmmaParty\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\SamerComputer\Work\OmmaParty\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\OmmaParty\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\SamerComputer\Work\OmmaParty\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\SamerComputer\Work\OmmaParty\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\Standards Associates\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\SamerComputer\Work\Standards Associates\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\Standards Associates\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\SamerComputer\Work\Standards Associates\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\SamerComputer\Work\Standards Associates\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\InterPal\Web\PlexDAL\bin\Debug\PlexDAL.dll
+C:\SamerComputer\Work\InterPal\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+C:\SamerComputer\Work\InterPal\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\SamerComputer\Work\InterPal\Web\PlexDAL\obj\Debug\PlexDAL.dll
+C:\SamerComputer\Work\InterPal\Web\PlexDAL\obj\Debug\PlexDAL.pdb
+D:\SamerComputer\Work\Interpal\Web\PlexDAL\bin\Debug\PlexDAL.dll
+D:\SamerComputer\Work\Interpal\Web\PlexDAL\bin\Debug\PlexDAL.pdb
+D:\SamerComputer\Work\Interpal\Web\PlexDAL\obj\Debug\ResolveAssemblyReference.cache
+D:\SamerComputer\Work\Interpal\Web\PlexDAL\obj\Debug\PlexDAL.dll
+D:\SamerComputer\Work\Interpal\Web\PlexDAL\obj\Debug\PlexDAL.pdb

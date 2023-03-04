@@ -1,0 +1,33 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAJAX.master" AutoEventWireup="true" CodeFile="ContentPreview.aspx.cs" Inherits="Portals_Content_ContentPreview" Theme="Portal" Title="Untitled Page" %>
+<%@ MasterType VirtualPath="~/MasterPageAJAX.master" %>
+
+<%@ Register src="~/Modules/Content/UC_Content.ascx" tagname="UC_Content" tagprefix="PLex" %>
+<%@ Register src="~/Modules/Left/UC_LeftContainer.ascx" tagname="UC_LeftContainer" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Banner/UC_Banner.ascx" tagname="UC_Banner" tagprefix="Plex" %>
+
+<%@ Register src="~/Modules/Groups/UC_SPGroups.ascx" tagname="UC_SPGroups" tagprefix="Plex" %>
+
+<%@ Register src="~/Modules/Comments/UC_Comment.ascx" tagname="UC_Comment" tagprefix="Plex" %>
+
+<%@ Register src="~/Modules/Menu/UC_Menu.ascx" tagname="UC_Menu" tagprefix="Plex" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
+     <div class="Container_Right_Div FloatRight">
+        <Plex:UC_Content ID="UC_ContentControl" runat="server" /> 
+        <Plex:UC_Comment ID="UC_CommentControl" runat="server" />
+     </div>
+
+     <div class="Container_Left_Div FloatRight">
+        <%-- <Plex:UC_Menu ID="UC_MenuRight" runat="server" />--%>
+        
+         <Plex:UC_SPGroups ID="UC_SPGroupsControl" runat="server" />
+         
+         <Plex:UC_Banner ID="UC_BannerSubPage" runat="server" /> 
+         <Plex:UC_LeftContainer ID="UC_LeftContainerControl" runat="server" />
+
+     </div>
+
+     
+</asp:Content>
+
+

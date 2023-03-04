@@ -1,0 +1,80 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EmailPreview.aspx.cs" Inherits="Portals_EmailPreview" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../Themes/StyleSheet_Default.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div class="EmailDiv">
+    <div class="EmailImage"><asp:Image ImageUrl="~/Images/spaceball.gif" runat="server" /></div>
+    <div class="ClearBoth">
+        <div class="FloatLeft PaddingRight10">
+            <asp:Label ID="Label1" runat="server" CssClass="EmailLabel"  Text="Sender Name" 
+                AssociatedControlID="SenderNameTextBox"></asp:Label>
+        </div>
+        <div class="FloatLeft">
+            <asp:TextBox ID="SenderNameTextBox" runat="server"></asp:TextBox>
+        
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+            ControlToValidate="SenderNameTextBox" Display="Dynamic" ErrorMessage="*"></asp:RequiredFieldValidator>
+    </div>
+    </div>
+    
+    <div class="ClearBoth">
+    <div class="FloatLeft PaddingRight10">
+        <asp:Label ID="Label" runat="server" CssClass="EmailLabel" 
+            Text="Sender Email" AssociatedControlID="SenderEmailTextBox"></asp:Label>
+    </div>
+    <div class="FloatLeft">
+        <asp:TextBox ID="SenderEmailTextBox" runat="server"></asp:TextBox>
+    
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+            ControlToValidate="SenderEmailTextBox" Display="Dynamic" ErrorMessage="*"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+            ControlToValidate="SenderEmailTextBox" 
+            ErrorMessage="Please Enter Correct Email" 
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+    </div>
+    </div>
+    
+    <div class="ClearBoth">
+        <div class="FloatLeft PaddingRight10">
+                <asp:Label ID="Label3" runat="server" CssClass="EmailLabel" 
+                    Text="Recipient Email" AssociatedControlID="RecipientEmailTextBox"></asp:Label>
+        </div>
+        
+        <div class="FloatLeft">
+                <asp:TextBox ID="RecipientEmailTextBox" runat="server"></asp:TextBox>
+      
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+            ControlToValidate="RecipientEmailTextBox" Display="Dynamic" ErrorMessage="*"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+            ControlToValidate="RecipientEmailTextBox" 
+            ErrorMessage="Please Enter the Email Correctly" 
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+      </div>
+      </div>
+    
+        <div class="ClearBoth">
+         <div class="FloatLeft PaddingRight10">
+            <asp:Label ID="Label4" runat="server" CssClass="EmailLabel" Text="Message" 
+                 AssociatedControlID="MessageTextBox"></asp:Label>
+            </div>
+            
+             <div class="FloatLeft">
+            <asp:TextBox ID="MessageTextBox" runat="server" Height="171px" TextMode="MultiLine" Width="300px"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                     ControlToValidate="MessageTextBox" Display="Dynamic" ErrorMessage="*"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+        <div class="ClearBoth">
+            <asp:Button ID="SendButton" runat="server" Text="Send" onclick="SendButton_Click" Width="71px" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>

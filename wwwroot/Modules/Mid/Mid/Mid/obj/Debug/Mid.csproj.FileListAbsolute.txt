@@ -1,0 +1,10 @@
+\Web\wwwroot\Modules\Mid\Mid\Mid\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Mid\Mid\Mid\bin\Mid.dll
+\Web\wwwroot\Modules\Mid\Mid\Mid\bin\Mid.pdb
+\Web\wwwroot\Modules\Mid\Mid\Mid\bin\KFGCMS.BLL.dll
+\Web\wwwroot\Modules\Mid\Mid\Mid\bin\Microsoft.ApplicationBlocks.Data.dll
+\Web\wwwroot\Modules\Mid\Mid\Mid\bin\KFGCMS.BLL.pdb
+\Web\wwwroot\Modules\Mid\Mid\Mid\obj\Debug\Mid.dll
+\Web\wwwroot\Modules\Mid\Mid\Mid\obj\Debug\Mid.pdb
+\Web\wwwroot\bin\Mid.dll
+\Web\wwwroot\bin\Mid.pdb

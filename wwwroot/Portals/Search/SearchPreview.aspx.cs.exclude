@@ -1,0 +1,167 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Search_SearchPreview : System.Web.UI.Page
+{
+    DataSet dataSet = new DataSet(),
+            SubpageContainerDataSet = new DataSet();
+    DataTable SearchDataTable = new DataTable();
+    string tableType;
+    DataRow row;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string language = "";
+
+        if (!IsPostBack)
+
+
+
+             try
+                {
+
+                    Portals_MasterPage masterPage = (Portals_MasterPage)Page.Master;
+
+                    masterPage.SearchText = Search_Info.SearchText;
+
+                 if (!String.IsNullOrEmpty(Request.QueryString["info"]))
+                 {
+                        Global_BLL.DecodeUrl(Request.QueryString["info"]);
+                        language = Pages_BLL.GetLanguage();
+                 }
+                 else
+                     language = Pages_BLL.GetLanguage();
+
+                    
+                    // request data from database according to page type and id
+                    DataSet dataSet = Search_BLL.SearchResults(Request.QueryString["search"], Request.QueryString["qt"], language);
+
+
+                 
+
+                    foreach (DataTable dataTable in dataSet.Tables)
+                    {
+                        // get table type
+                        tableType = DataTableType(dataTable);
+
+                        // check if table is empty or not
+                        if (row[0].ToString().ToLower() == "empty")
+                        {
+                            
+                            continue;
+                        }
+
+                        switch (tableType.ToLower())
+                        {
+                            //Init  Dynamic Control
+                            case "search":
+                                {
+                                    SearchDataTable = dataTable.Copy();
+                                    break;
+                                }
+
+                            //case "banner":
+                            //    {
+                            //        // bind banners
+                            //        // Check Banners Status
+                            //        if (dataTable.Rows.Count != 0)
+                            //        {
+                            //            foreach (DataRow bannerRow in dataTable.Rows)
+                            //            {
+
+                            //                if (!String.IsNullOrEmpty(bannerRow["BannerTop"].ToString()))
+                            //                {
+                            //                    masterPage.BannerTopDataContent = bannerRow["BannerTop"].ToString();
+                            //                }
+                            //                //else
+                            //                //    if (String.IsNullOrEmpty(bannerRow["BannerTop"].ToString())) // this because top banner shouldnot become null
+                            //                //    {
+                            //                //        masterPage.BannerTopDataContent = "<img src='" + ConfigurationManager.AppSettings["BannerTopDefault"].ToString() + "' />";
+                            //                //    }
+
+                            //                if (!String.IsNullOrEmpty(bannerRow["BannerSubPage"].ToString()))
+                            //                {
+                            //                    UC_BannerSubPage.DataContent = bannerRow["BannerSubPage"].ToString();
+                            //                }
+
+                            //            }
+                            //        }
+                            //        break;
+                            //    }
+                            //case "menu":
+                            //    {
+                            //        DataView MenuDataView = new DataView(dataTable);
+                            //        MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 1";
+
+                            //        masterPage.MenuTopDataContent = MenuDataView;
+
+                            //        MenuDataView.RowFilter = "PAGE_MENUPOSITION = 0 OR PAGE_MENUPOSITION = 2";
+                            //        masterPage.MenuBottomDataContent = MenuDataView;
+                            //        break;
+                            //    }
+
+                            ////Init  Left Container (SubPage Container)
+                            //case "containersubpage":
+                            //    {
+                            //        SubpageContainerDataSet.Tables.Add(dataTable.Copy());
+                            //        break;
+                            //    }
+                           
+                           
+                        }
+                    }
+
+                    masterPage.StaticContent(dataSet);
+
+
+                    //// init Left Container Column
+                    //if (SubpageContainerDataSet.Tables.Count != 0)
+                    //    UC_LeftContainerControl.DataContent = SubpageContainerDataSet;
+                    //else
+                    //    HideControl(UC_LeftContainerControl);
+
+                    UC_SearchResultControl.DataContent = SearchDataTable;
+
+                    //// Init Page Date
+                    //masterPage.HeaderDate = DateTime.Now;
+                   Pages_BLL.ChangePageTitle(Page,"Search Result");
+
+                }
+
+                catch (Exception exc)
+                {
+                    Global_BLL.FireException(this, exc.Message);
+                }
+
+
+
+
+     
+    }
+
+
+    public string DataTableType(DataTable dataTable)
+    {
+        row = dataTable.Rows[0];
+        return row["TableType"].ToString();
+    }
+
+
+
+    public void HideControl(Control control)
+    {
+        control.Visible = false;
+    }
+
+}

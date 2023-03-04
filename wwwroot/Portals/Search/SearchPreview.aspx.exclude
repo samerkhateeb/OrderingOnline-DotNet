@@ -1,0 +1,27 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPageAJAX.master" AutoEventWireup="true" Theme="Portal" CodeFile="SearchPreview.aspx.cs" Inherits="Portals_Search_SearchPreview" Title="Untitled Page" %>
+
+<%@ Register src="~/Modules/Content/UC_Content.ascx" tagname="UC_Content" tagprefix="PLex" %>
+<%@ Register src="~/Modules/Left/UC_LeftContainer.ascx" tagname="UC_LeftContainer" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Banner/UC_Banner.ascx" tagname="UC_Banner" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Tabs/UC_TabsNews.ascx" tagname="UC_TabsNews" tagprefix="Plex" %>
+<%@ Register src="~/Modules/PageCategories/UC_PageCategories.ascx" tagname="UC_PageCategories" tagprefix="Plex" %>
+<%@ Register src="~/Modules/Menu/UC_Menu.ascx" tagname="UC_Menu" tagprefix="Plex" %>
+
+<%@ Register src="~/Modules/Search/UC_SearchResult.ascx" tagname="UC_SearchResult" tagprefix="Plex" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="BodyContentPlaceHolder" Runat="Server">
+
+    <div class="Container_Left_Div FloatLeft">
+           <%-- <Plex:UC_Menu ID="UC_MenuRight" runat="server" />
+            <br class="ClearBoth" />--%>
+            <Plex:UC_Banner ID="UC_BannerSubPage" runat="server" />
+            <Plex:UC_LeftContainer ID="UC_LeftContainerControl" runat="server" />
+    </div>
+
+    <div class="Container_Right_Div FloatRight">
+        <Plex:UC_SearchResult ID="UC_SearchResultControl" runat="server" />
+    </div>
+
+
+</asp:Content>
+

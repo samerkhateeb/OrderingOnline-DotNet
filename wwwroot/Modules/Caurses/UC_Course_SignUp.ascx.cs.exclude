@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Controls_UC_Course_SignUp : System.Web.UI.UserControl
+{
+
+    object userid;
+      string  completeQString;
+    protected void Page_Load(object sender, EventArgs e)
+      {
+          StatusLabel.Visible = false;
+
+          if (!IsPostBack)        
+          {
+              HeaderLabel.Text = Site_Info.Signup_Header;
+              NameLabel.Text = Site_Info.Signup_Name;
+              PasswordLabel.Text = Site_Info.Signup_Password;
+              PasswordConfirmLabel.Text = Site_Info.Signup_PasswordConfirm;
+              EmailLabel.Text = Site_Info.Signup_Email;
+              PhoneLabel.Text = Site_Info.Signup_Phone;
+              CommentLabel.Text = Site_Info.Signup_Comments;
+
+              this.DataBind();
+
+
+
+          }
+      }
+    protected void SubmitButton_Click(object sender, EventArgs e)
+    {
+        string text =  "";
+        string statusApproved;
+        try
+        {
+            Courses_BLL CoursesBLL = new Courses_BLL();
+            Courses_Info CoursesInfo = new Courses_Info();
+            CoursesInfo.UserName = NameTextBox.Text;
+            CoursesInfo.UserEmail = EmailTextBox.Text;
+
+            userid = CoursesBLL.UsersCount(CoursesInfo);
+
+            if (Convert.ToInt32(userid) > 0)
+            {
+                StatusLabel.Visible = true;
+                StatusLabel.CssClass = "Error";
+
+
+                StatusLabel.Text = Site_Info.SignUpUserExist;
+            }
+
+            else
+            {
+
+                
+                string urlParameter = String.Format("username={0}&userID={1}&password={2}&email={3}&phone={4}&comments={5}&date={6}&language={7}",
+                                    NameTextBox.Text,
+                                    userid,
+                                    PasswordTextBox.Text,
+                                    EmailTextBox.Text,
+                                    PhoneTextBox.Text,
+                                    CommentsTextBox.Text,
+                                    DateTime.Now.AddHours(Convert.ToDouble(ConfigurationManager.AppSettings["TimeDifferences"])),
+                                    Pages_BLL.GetLanguage()
+                                    ),
+
+                        ReturnUrl = String.Format("<a href='{0}/Portals/CompleteRegistrationProcess?info={1}'>{2}</a>", ConfigurationManager.AppSettings["WebsiteUrl"], Global_BLL.EncodeUrl(urlParameter), Site_Info.Signup_Pending_Click);
+
+                Email_BLL EmailBLL = new Email_BLL();
+                statusApproved = EmailBLL.SendEmail(
+                                        ConfigurationManager.AppSettings["SenderEmail"].ToString(), 
+                                        EmailTextBox.Text, 
+                                        String.Format("{0},{1} ", NameTextBox.Text, Site_Info.EmailSubject), 
+                                        String.Format(Site_Info.EmailNotification,ReturnUrl ) 
+                                    );
+
+                if (statusApproved == "true") // an error occured
+                    StatusLabel.Text = Site_Info.Signup_Pending_Successfull;
+                else
+                    StatusLabel.Text = Site_Info.Signup_Pending_Error + "......." + statusApproved;
+
+                    StatusLabel.Visible = true;
+                    StatusLabel.DataBind();
+
+                    Pages_BLL.ChangePageTitle(this.Page, Site_Info.Signup_PageTitle);
+                
+
+
+            }
+
+
+        }
+        catch (Exception exc)
+        {
+            StatusLabel.Visible = true;
+            StatusLabel.Text = exc.Message;// "Unexpected Error occured, please try again later.";
+        }
+
+    }
+}

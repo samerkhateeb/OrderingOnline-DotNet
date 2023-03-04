@@ -1,0 +1,112 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "localhost", "http://localhost:122", "{5E03EF37-014E-4E39-9E98-3CF51AD0C058}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{B071BC7E-D271-4AEF-970A-2E97386ABDEF}|KFGCMS.BASE.dll;{744D0238-C413-4710-842D-713B8B2DD5C1}|KFGCMS.INFO.dll;{0C60B459-A808-4169-93DB-3D3CC87927CE}|KFGCMS.BLL.dll;{5087C9D6-077C-493B-AD26-44CE7EAEA427}|KFGCMS.Utilities.dll;{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}|KFGCMS.DAL.dll;{A5A3C14F-4533-4705-9D17-8050ED67A045}|KFGCMS.ConnectionManager.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost:122"
+		Debug.AspNetCompiler.PhysicalPath = "wwwroot\"
+		Debug.AspNetCompiler.TargetPath = "\\kfgkwsrvfnp01\users$\samerk\Visual Studio 2010\Projects\localhost\PrecompiledWeb\localhost:122\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost:122"
+		Release.AspNetCompiler.PhysicalPath = "wwwroot\"
+		Release.AspNetCompiler.TargetPath = "\\kfgkwsrvfnp01\users$\samerk\Visual Studio 2010\Projects\localhost\PrecompiledWeb\localhost:122\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "\Web\wwwroot\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFGCMS.DAL", "KFG.DAL\KFGCMS.DAL.csproj", "{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFGCMS.BLL", "KFG.CMS\KFGCMS.BLL.csproj", "{0C60B459-A808-4169-93DB-3D3CC87927CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFGCMS.BASE", "KFG.Base\KFGCMS.BASE.csproj", "{B071BC7E-D271-4AEF-970A-2E97386ABDEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BASE", "BASE", "{35909B15-F6E5-47AA-AE9D-B6C26D5E4444}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{4AEDB2E3-0D00-4E27-945D-D8F7E29959D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{798782B3-A442-4940-8314-A2C340CD658B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFGCMS.INFO", "KFGCMS.INFO\KFGCMS.INFO.csproj", "{744D0238-C413-4710-842D-713B8B2DD5C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "INFO", "INFO", "{C03713E4-22FE-4DA0-BBB3-3E321E27B57B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{AB8226DF-D8AB-48F0-AC02-CB76FFF74056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFG.Utilities", "KFG.Utilities\KFG.Utilities\KFG.Utilities.csproj", "{5087C9D6-077C-493B-AD26-44CE7EAEA427}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConnectionManager", "ConnectionManager", "{227E23FD-5EB4-4CF3-A8C6-6E69B4713C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFGCMS.ConnectionManager", "KFGCMS.ConnectionManager\KFGCMS.ConnectionManager.csproj", "{A5A3C14F-4533-4705-9D17-8050ED67A045}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://kfgkwsrvwebd:8080/tfs/production
+		SccWebProject0 = true
+		SccProjectUniqueName0 = http://localhost:122
+		SccProjectName0 = $/shopping.com/wwwroot
+		SccAuxPath0 = http://kfgkwsrvwebd:8080/tfs/production
+		SccLocalPath0 = ..\\shopping.com\\wwwroot
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E03EF37-014E-4E39-9E98-3CF51AD0C058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E03EF37-014E-4E39-9E98-3CF51AD0C058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E03EF37-014E-4E39-9E98-3CF51AD0C058}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E03EF37-014E-4E39-9E98-3CF51AD0C058}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C60B459-A808-4169-93DB-3D3CC87927CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C60B459-A808-4169-93DB-3D3CC87927CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C60B459-A808-4169-93DB-3D3CC87927CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C60B459-A808-4169-93DB-3D3CC87927CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B071BC7E-D271-4AEF-970A-2E97386ABDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B071BC7E-D271-4AEF-970A-2E97386ABDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B071BC7E-D271-4AEF-970A-2E97386ABDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B071BC7E-D271-4AEF-970A-2E97386ABDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744D0238-C413-4710-842D-713B8B2DD5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744D0238-C413-4710-842D-713B8B2DD5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744D0238-C413-4710-842D-713B8B2DD5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744D0238-C413-4710-842D-713B8B2DD5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5087C9D6-077C-493B-AD26-44CE7EAEA427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5087C9D6-077C-493B-AD26-44CE7EAEA427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5087C9D6-077C-493B-AD26-44CE7EAEA427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5087C9D6-077C-493B-AD26-44CE7EAEA427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A3C14F-4533-4705-9D17-8050ED67A045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A3C14F-4533-4705-9D17-8050ED67A045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A3C14F-4533-4705-9D17-8050ED67A045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A3C14F-4533-4705-9D17-8050ED67A045}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA1D564A-9CF0-42EA-ABAC-1E49BCE05D70} = {798782B3-A442-4940-8314-A2C340CD658B}
+		{0C60B459-A808-4169-93DB-3D3CC87927CE} = {4AEDB2E3-0D00-4E27-945D-D8F7E29959D5}
+		{B071BC7E-D271-4AEF-970A-2E97386ABDEF} = {35909B15-F6E5-47AA-AE9D-B6C26D5E4444}
+		{744D0238-C413-4710-842D-713B8B2DD5C1} = {C03713E4-22FE-4DA0-BBB3-3E321E27B57B}
+		{5087C9D6-077C-493B-AD26-44CE7EAEA427} = {AB8226DF-D8AB-48F0-AC02-CB76FFF74056}
+		{A5A3C14F-4533-4705-9D17-8050ED67A045} = {227E23FD-5EB4-4CF3-A8C6-6E69B4713C56}
+	EndGlobalSection
+EndGlobal

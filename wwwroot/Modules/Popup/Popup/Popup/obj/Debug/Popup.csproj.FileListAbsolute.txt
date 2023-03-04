@@ -1,0 +1,10 @@
+\Web\wwwroot\bin\Popup.dll
+\Web\wwwroot\bin\Popup.pdb
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\Popup.dll
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\Popup.pdb
+\Web\wwwroot\bin\Popup.dll
+\Web\wwwroot\bin\Popup.pdb
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\Popup.dll
+\Web\wwwroot\Modules\Popup\Popup\Popup\obj\Debug\Popup.pdb

@@ -1,0 +1,10 @@
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\obj\Debug\ResolveAssemblyReference.cache
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\Intermediate.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\Intermediate.pdb
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\PlexControlPanel.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\PlexDAL.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\PlexDAL.pdb
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\bin\Debug\PlexControlPanel.pdb
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\obj\Debug\Intermediate.dll
+C:\Samer Computer\Work\PMP Arabia.com\Web\Intermediate\obj\Debug\Intermediate.pdb

@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+public partial class Portals_Controls_UC_Courses : System.Web.UI.UserControl
+{
+    int loopIndex = 0, TablesCount = 0;
+   // bool loginStatus = true;
+
+     public DataTable DataContent
+    {
+        set
+        {
+           // DataSet dataSet = value;
+            //string loginUrl = ConfigurationManager.AppSettings["PortalAlias"].ToString() + ConfigurationManager.AppSettings["CourseLoginPage"].ToString();
+
+            //if (!Convert.IsDBNull(Request.Cookies["CourseUser"]))
+            //    loginStatus = false;
+             
+         //   TablesCount = dataSet.Tables.Count;
+            
+            // dataView.RowFilter = "ParentID=" + dataTable.Rows[0]["parentid"];
+            //DataRow rowView = dataSet.Tables[0].Rows[0];
+            //DataTable masterDataTable = new DataTable();
+            //masterDataTable.Columns.Add(new DataColumn("ParentID"));
+            
+            //// this to create parent rows according to the tables inside it.
+            //for (loopIndex = 0; loopIndex < TablesCount; loopIndex++)
+            //    masterDataTable.ImportRow(rowView);
+            
+            // bind it to parent gridview 
+            CoursesGridView.DataSource = value;
+            CoursesGridView.DataBind();
+            loopIndex = 0;
+            //foreach ( DataTable dataTable in dataSet.Tables)
+            //{
+
+                //// find the row to get child gridview inside
+                //GridViewRow row = CoursesGridView.Rows[loopIndex];
+
+                //// Init Grid Items
+                //GridView ChildGridView = (GridView)row.FindControl("LessonsGridView");
+                //ChildGridView .DataSource = dataTable;
+                //ChildGridView .DataBind();
+
+                //
+                //if (!loginStatus)
+                //{
+                //    foreach (GridViewRow gridRow in ChildGridView.Rows)
+                //    {
+                //        Panel   LoginMessagePanel = gridRow.FindControl("LoginMessagePanel") as Panel,
+                //                ControlsPanel = gridRow.FindControl("ControlsPanel") as Panel;
+
+                //        LoginMessagePanel.Visible = true;
+                //        ControlsPanel.Visible = false;
+
+                //        Label MessageLabel = gridRow.FindControl("MessageLabel") as Label;
+                //        MessageLabel.Text = String.Format("You Are Not LoggedIn or Registar, Please <a href='{0}'> Login or Register </a> To Download Full Course", loginUrl);
+                //        MessageLabel.DataBind();
+                //    }
+                //}
+
+                // Init Grid Header
+                //GridViewRow HeaderRow = ChildGridView.HeaderRow,
+                //            FooterRow = ChildGridView.FooterRow;
+                //Label HeaderLabel = HeaderRow.FindControl("HeaderLabel") as Label;
+                //HeaderLabel.Text = dataTable.Rows[0]["PARENT_TITLE"].ToString();
+
+                //loopIndex++;    
+                
+            //}
+            
+        }
+
+    }
+}

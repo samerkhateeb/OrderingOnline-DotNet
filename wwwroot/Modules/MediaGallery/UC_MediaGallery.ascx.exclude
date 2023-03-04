@@ -1,0 +1,129 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UC_MediaGallery.ascx.cs" Inherits="Portals_Controls_UC_MediaGallery" %>
+<%@ Import Namespace="KFGCMS.BLL" %>
+
+<div class="Category_Div FloatRight">
+<asp:Literal ID="ScriptLiteral" runat="server"></asp:Literal>
+
+    <asp:HiddenField ID="TypeHiddenField" runat="server" />
+    
+    <asp:UpdateProgress ID="BodyUpdateProgress" runat="server" >
+          <ProgressTemplate><div id="topbar" class="ProgressDiv">Loading...<img id="Img1" src="~/images/loading_bar.gif" runat="server" /></div>
+          </ProgressTemplate>
+    </asp:UpdateProgress>
+                                      
+<div class="Category_Header_Div">
+<asp:HyperLink ID="RootHyperLink" CssClass="Category_Header_LinkButton FloatRight" runat="server">
+</asp:HyperLink>
+<img  class="Arrow_Right FloatRight" src="~/images/spaceball.gif" runat="server" />
+<asp:Label ID="ParentHeaderLabel" CssClass="Category_Header_Label FloatRight" runat="server"></asp:Label>
+</div>
+
+<div class="Category_Body_Div">
+<asp:Panel ID="PhotoPanel" runat="server" Visible="false">
+<div class="PhotoGalleryDiv">
+<div class="PhotoGalleryTitle"></div>
+<div class="FloatRight Direction">
+    <asp:DataList ID="PhotoDataList" runat="server" RepeatColumns="5">
+        <AlternatingItemStyle CssClass="PhotoItem" />
+        <ItemStyle CssClass="PhotoItem" />
+        <ItemTemplate>
+        <div class="MediaGalleryItem">
+            <a title='<%# Eval("Title") %>' href='<%# String.Format("../{0}", Eval("MediaFile"))%>'  rel="imagebox-samples">
+            <img  src='<%# String.Format("{0}", Global_BLL.FilterImagePathToThumbnail( Eval("MediaFile").ToString() )) %>'
+            class="MediaGalleryImage" alt='<%# Eval("Description    ") %>' />
+            <div class="MediaGalleryDate"><%# String.Format("[ {0} ]",Date_BLL.FilterDateToDate(Convert.ToDateTime(Eval("Date"))))%></div>
+            <div class="MediaGalleryDescription"><%# Eval("Title").ToString()%></div>
+            </a>
+         
+         </div>
+        </ItemTemplate>
+    </asp:DataList>
+    </div>
+</div>
+</asp:Panel>
+
+<asp:UpdatePanel ID="MediaUpdatePanel" runat="server">
+    <ContentTemplate>
+    <asp:Panel ID="AudioPanel" runat="server" Visible="false">
+    <asp:Label ID="AudioNameLabel" CssClass="LinkButtonHeader FloatRight" runat="server"></asp:Label>
+    <br class="ClearBoth" />
+    <div class="FloatRight LinkButtonHeader">ملاحظة: عند الضغط على زر التشغيل، يرجى الانتظار قليلاً</div>
+    <br class="ClearBoth" />
+        <asp:Literal ID="AudioLiteral" runat="server" ></asp:Literal>
+    <br class="ClearBoth" />
+        <asp:Label ID="AudioDescriptionLabel" CssClass="LabelDescription FloatRight" runat="server"></asp:Label>
+    <br class="ClearBoth" /><br class="ClearBoth" />
+     <hr />
+     <div class="FloatRight Direction">
+<asp:DataList ID="AudioDataList" runat="server" DataKeyField="ID" 
+             onitemcommand="MediaGalleryItemCommand" RepeatColumns="4" 
+             RepeatDirection="Horizontal">
+        <AlternatingItemStyle HorizontalAlign="Right" />
+        <ItemStyle HorizontalAlign="Right" />
+        <ItemTemplate>
+            <div class="MediaGalleryItem">
+                        <asp:ImageButton ID="ThumbnailImageButton" runat="server" 
+                            AlternateText='<%# Eval("Title") %>' CssClass="MediaGalleryImage"
+                            ImageUrl='<%# String.Format("{0}",Global_BLL.FilterImagePathToThumbnail(Eval("Thumbnail").ToString()) ) %>' 
+                            CommandName='<%# Eval("Type")%>' 
+                            CommandArgument='<%# Eval("MediaFile") %>' />
+                    
+            <div class="MediaGalleryDate"><%# String.Format("[ {0} ]", Date_BLL.FilterDateToDate(Eval("Date")))%></div>
+                <asp:HiddenField ID="TitleHiddenField" Value='<%# Eval("Title")%>' runat="server" />
+                <asp:HiddenField ID="DescriptionHiddenField" Value='<%# Eval("Description") %>' runat="server" />
+                
+                <asp:LinkButton ID="AudioLinkButton" runat="server" CssClass="MediaThumbnail_Link" Text='<%# Eval("Title") %>' 
+                                                        CommandArgument='<%# Eval("MediaFile") %>' CommandName='<%#Eval("Type") %>'></asp:LinkButton>
+            </div>
+        </ItemTemplate>
+    </asp:DataList>
+    </div>
+</asp:Panel>
+
+
+
+<asp:Panel ID="VideoPanel" runat="server" Visible="false">
+    
+    <asp:Label ID="VideoNameLabel" CssClass="LinkButtonHeader FloatRight" runat="server"></asp:Label>
+    <br class="ClearBoth" />
+    <div class="FloatRight LinkButtonHeader">عند الضغط على زر التشغيل، يرجى الانتظار قليلاً</div>
+    <asp:Literal ID="VideoLiteral" runat="server" ></asp:Literal>
+    <br class="ClearBoth" />
+    <asp:Label ID="VideoDescriptionLabel" CssClass="LabelDescription FloatRight" runat="server"></asp:Label>
+     
+     <hr />
+    <br class="ClearBoth" />
+    <div class="FloatRight Direction">
+    <asp:DataList ID="VideoDataList" runat="server" DataKeyField="ID" 
+        onitemcommand="MediaGalleryItemCommand" RepeatColumns="4" 
+        RepeatDirection="Horizontal">
+        <AlternatingItemStyle HorizontalAlign="Right" />
+        <ItemStyle HorizontalAlign="Right" />
+        <ItemTemplate>
+        
+        <div class="MediaGalleryItem">
+                        <asp:ImageButton ID="ThumbnailImageButton" runat="server" 
+                            AlternateText='<%# Eval("Description") %>' CssClass="MediaGalleryImage" 
+                            ImageUrl='<%# String.Format("{0}",Global_BLL.FilterImagePathToThumbnail(Eval("Thumbnail").ToString()) ) %>' 
+                           CommandArgument='<%# Eval("MediaFile") %>' CommandName='<%# Eval("Type")%>' />
+                        <div class="MediaGalleryDate"><%# String.Format("[ {0} ]",Date_BLL.FilterDateToDate(Convert.ToDateTime(Eval("Date"))))%></div>
+                        <a class="MediaDownload MarginCenter" href='<%# String.Format("../{0}", Eval("MediaFile")) %>'></a>
+                        <asp:LinkButton ID="VideoLinkButton" runat="server"  CssClass="MediaThumbnail_Link" Text='<%# Eval("Title") %>' CommandArgument='<%# Eval("MediaFile") %>' CommandName='<%# Eval("Type")%>'></asp:LinkButton>
+                        
+                    <asp:HiddenField ID="TitleHiddenField" Value='<%# Eval("Title")%>' runat="server" />
+                    <asp:HiddenField ID="DescriptionHiddenField" Value='<%# Eval("Description") %>' runat="server" />
+                    
+         </div>
+         
+        </ItemTemplate>
+    </asp:DataList>
+    </div>
+    </div>
+</asp:Panel>
+
+   
+    </ContentTemplate>
+</asp:UpdatePanel>
+
+</div>
+</div>

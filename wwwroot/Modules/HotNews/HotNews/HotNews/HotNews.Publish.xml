@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\HotNews" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="css/StyleSheet.css" publishTime="11/29/2012 16:17:19" />
+    <file relUrl="bin/KFGCMS.BASE.dll" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.BASE.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.Utilities.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/HotNews.dll" publishTime="11/29/2012 17:48:56" />
+    <file relUrl="bin/HotNews.Module.dll" publishTime="11/29/2012 17:48:56" />
+    <file relUrl="bin/KFGCMS.INFO.dll" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/KFGCMS.DAL.dll" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/KFGCMS.INFO.pdb" publishTime="11/29/2012 16:40:51" />
+    <file relUrl="bin/Microsoft.ApplicationBlocks.Data.dll" publishTime="11/21/2012 15:26:36" />
+    <file relUrl="images/Left_arrow.png" publishTime="11/29/2012 17:50:05" />
+    <file relUrl="bin/HotNews.Module.pdb" publishTime="11/29/2012 17:48:55" />
+    <file relUrl="images/right_arrow.png" publishTime="11/29/2012 17:48:24" />
+    <file relUrl="bin/KFGCMS.DAL.pdb" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/HotNews.pdb" publishTime="11/29/2012 17:48:56" />
+    <file relUrl="bin/KFGCMS.Utilities.dll" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="scripts/HotNews_Old.js" publishTime="10/13/2012 12:52:14" />
+    <file relUrl="scripts/HotNews.js" publishTime="10/21/2012 13:48:00" />
+    <file relUrl="HotNews.ascx" publishTime="11/29/2012 15:22:19" />
+    <file relUrl="bin/KFGCMS.BLL.pdb" publishTime="11/29/2012 16:40:52" />
+    <file relUrl="bin/KFGCMS.BLL.dll" publishTime="11/29/2012 16:40:52" />
+  </publishProfile>
+</publishData>

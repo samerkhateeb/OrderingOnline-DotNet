@@ -1,0 +1,12 @@
+\wwwroot\Bin\KFG.Utilities.dll
+\wwwroot\Bin\KFG.Utilities.pdb
+\Web\wwwroot\Bin\KFG.Utilities.dll
+\Web\wwwroot\Bin\KFG.Utilities.pdb
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\KFG.Utilities.dll
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\KFG.Utilities.pdb
+\Web\wwwroot\Bin\KFGCMS.Utilities.dll
+\Web\wwwroot\Bin\KFGCMS.Utilities.pdb
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\KFGCMS.Utilities.dll
+\Web\KFG.Utilities\KFG.Utilities\obj\Debug\KFGCMS.Utilities.pdb

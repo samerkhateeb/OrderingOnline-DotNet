@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Voting_VotingPreview : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            try
+            {
+                 string focus = Request.QueryString["focus"],
+                        questionID = Request.QueryString["qid"],
+                        language = Pages_BLL.GetLanguage();
+
+                DataSet VotingResultDataSet = new DataSet();
+
+
+                // change style According to selected language
+                StyleSheetLink.Attributes.Add("href", Pages_BLL.DefaultStyleSheetPath(QueryString_Info.Language));
+
+                if (language == "arb")
+                {
+                    Page.Title = "نتائج التصويت";
+                    QuestionLabel.Text = "السؤال: ";
+                }
+                else
+                {
+                    Page.Title = "Voting Results";
+                    QuestionLabel.Text = "Question: ";
+                }
+
+                // Init Cookie to ensure that user voting only one time per session
+                HttpCookie cookie = Request.Cookies["Voting" + questionID];
+                if (cookie == null)
+                    cookie = new HttpCookie("Voting" + questionID);
+                // the user is not voted before
+                if (cookie["Question" + questionID] != null) // the user voted before
+                
+                    focus = "result";
+
+
+                    if (focus == "result")
+                        VotingResultDataSet = Voting_BLL.Voting_Result(questionID, language);
+                    else
+                        VotingResultDataSet = Voting_BLL.Voting_Update(focus, questionID, language);
+
+                    double total = Convert.ToInt32(VotingResultDataSet.Tables[0].Rows[0]["VAnswer_TOTAL"]),
+                           votingStyleCount = 1,
+                           answerAVG,
+                           labelWidth;
+
+
+                    QuestionLabel.Text += VotingResultDataSet.Tables[0].Rows[0]["VQuestion_Name"].ToString();
+
+                    foreach (DataRow dataRow in VotingResultDataSet.Tables[0].Rows)
+                    {
+                        answerAVG = Convert.ToInt32 (dataRow["VAnswer_AVG"]);
+                        labelWidth = answerAVG / total * 100;
+
+                        Literal ResultLiteral = new Literal();
+
+                        ResultLiteral.Text = string.Format(@"<div class='VotingResultDiv'>
+                                                                <div class='Width200 FloatRight'>
+                                                                                    <span class='VotingResultLabel'>{0}</span> 
+                                                                                    - <span >{3}</span>
+                                                                </div>
+
+                                                                    <div class='Width300 PaddingTop5 FloatRight'>
+                                                                            <span style='width:{1}px;' class='{2} FloatRight'></span>
+                                                                    </div>
+                                                            </div>", dataRow["VAnswer_Name"], Convert.ToUInt16(labelWidth) * 3,
+                                                            "VotingResultLabel" + votingStyleCount, " % " + (Math.Round(labelWidth, 1)));
+
+                        ResultLiteral.DataBind();
+                        ResultsPanel.Controls.Add(ResultLiteral);
+
+                        votingStyleCount++;
+                        if (votingStyleCount > 4)
+                            votingStyleCount = 1;
+                    }
+                    ResultsPanel.DataBind();
+
+
+                    cookie["Question" + questionID] = "Perfect";
+                    cookie.Expires = Convert.ToDateTime(VotingResultDataSet.Tables[0].Rows[0]["VQuestion_Date"].ToString()).AddDays(Convert.ToDouble(VotingResultDataSet.Tables[0].Rows[0]["VQuestion_Period"]));
+                    Response.Cookies.Add(cookie);
+
+                }
+               
+
+            
+
+            catch (Exception exc)
+            {
+                Global_BLL.FireException(this, exc.Message);
+            }
+        }
+    }
+}

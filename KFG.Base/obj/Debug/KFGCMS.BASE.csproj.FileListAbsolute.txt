@@ -1,0 +1,10 @@
+\Web\KFG.Base\bin\Debug\KFGCMS.BASE.dll
+\Web\KFG.Base\bin\Debug\KFGCMS.BASE.pdb
+\Web\KFG.Base\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.Base\obj\Debug\KFGCMS.BASE.dll
+\Web\KFG.Base\obj\Debug\KFGCMS.BASE.pdb
+\Web\KFG.Base\bin\Debug\KFGCMS.BASE.dll
+\Web\KFG.Base\bin\Debug\KFGCMS.BASE.pdb
+\Web\KFG.Base\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFG.Base\obj\Debug\KFGCMS.BASE.dll
+\Web\KFG.Base\obj\Debug\KFGCMS.BASE.pdb

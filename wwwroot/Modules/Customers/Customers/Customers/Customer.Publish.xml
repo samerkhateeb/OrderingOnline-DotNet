@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\Web\wwwroot\Modules\Customers" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/ru/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.Utilities.pdb" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="bin/KFGCMS.BASE.dll" publishTime="10/21/2012 11:40:43" />
+    <file relUrl="bin/es/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.Utilities.dll" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="bin/hi/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.DAL.dll" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="Customer_Activation.ascx" publishTime="10/17/2012 16:55:22" />
+    <file relUrl="bin/zh-CHS/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/KFGCMS.BLL.pdb" publishTime="10/24/2012 13:19:12" />
+    <file relUrl="Customer_Registration.ascx" publishTime="10/15/2012 16:55:02" />
+    <file relUrl="bin/AjaxControlToolkit.pdb" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/de/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/Customer_Module.pdb" publishTime="11/04/2012 13:09:01" />
+    <file relUrl="bin/KFGCMS.INFO.pdb" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="Customer_Activation_Checkout.ascx" publishTime="11/04/2012 13:02:23" />
+    <file relUrl="bin/zh-CHT/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="AddressDetails.ascx" publishTime="10/14/2012 14:52:15" />
+    <file relUrl="bin/KFGCMS.BASE.pdb" publishTime="10/21/2012 11:40:43" />
+    <file relUrl="bin/Customer_Module.dll" publishTime="11/04/2012 13:09:01" />
+    <file relUrl="bin/he/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/fr/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="Customer_Login.ascx" publishTime="11/04/2012 12:57:30" />
+    <file relUrl="scripts/AddressDetails.js" publishTime="10/14/2012 17:04:37" />
+    <file relUrl="bin/KFGCMS.BLL.dll" publishTime="10/24/2012 13:19:12" />
+    <file relUrl="bin/nl/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/tr-TR/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/it/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/Customer.dll" publishTime="11/05/2012 11:37:36" />
+    <file relUrl="bin/Microsoft.ApplicationBlocks.Data.dll" publishTime="02/21/2009 02:25:54" />
+    <file relUrl="bin/KFGCMS.INFO.dll" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="bin/Customer.pdb" publishTime="11/05/2012 11:37:36" />
+    <file relUrl="bin/cs/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/pt/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ar/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="Customer_Login_Checkout.ascx" publishTime="11/06/2012 14:26:43" />
+    <file relUrl="bin/KFGCMS.DAL.pdb" publishTime="10/21/2012 11:40:44" />
+    <file relUrl="bin/ko/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="bin/ja/AjaxControlToolkit.resources.dll" publishTime="07/17/2012 19:23:27" />
+    <file relUrl="scripts/Customer.js" publishTime="10/14/2012 17:08:54" />
+  </publishProfile>
+</publishData>

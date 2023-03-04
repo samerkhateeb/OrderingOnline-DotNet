@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using KFGCMS.BLL;
+
+public partial class Portals_Media_MediaPreview : System.Web.UI.Page
+{
+
+    #region members
+        string mediaType,
+               mediaSelectedDataKey,
+               mediaNameType,
+               tableType,
+                selectedMediaFile;
+
+        object mediaFile;
+        DataRow row;
+        DataSet SubpageContainerDataSet = new DataSet();
+
+    #endregion
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        InitMedia();
+    }
+
+
+    public string DataTableType(DataTable dataTable)
+    {
+        row = dataTable.Rows[0];
+        return row["TableType"].ToString();
+    }
+
+    public void HideControl(Control control)
+    {
+        control.Visible = false;
+    }
+
+
+    /// <summary>
+    /// Media [Tabs] Container Command Event
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public void InitMedia()
+    {
+        try
+        {
+            // decode url
+            Global_BLL.DecodeUrl(Request.QueryString["info"]);
+
+            // request data from database according to page type and id
+            DataSet dataSet = Pages_BLL.ObjectData(QueryString_Info.ID, QueryString_Info.Source, QueryString_Info.Type, QueryString_Info.Language);
+
+            foreach (DataTable dataTable in dataSet.Tables)
+            {
+                // get table type
+                tableType = DataTableType(dataTable);
+
+                // check if table is empty or not
+                if (row[0].ToString().ToLower() == "empty")
+                {
+                    continue;
+                }
+
+                switch (tableType.ToLower())
+                {
+                    case "media":
+                        {
+                            // Init Page Title
+                            Pages_BLL.ChangePageTitle(this.Page, dataTable.Rows[0]["Title"].ToString());
+                            UC_MediaGalleryControl.MediaTypeValue = QueryString_Info.Type;
+
+                            UC_MediaGalleryControl.GalleryContent = dataTable;
+
+                            break;
+                        }
+                }
+            }
+
+
+            Master.StaticContent(dataSet);
+        }
+
+
+        catch (Exception exc)
+        {
+            Global_BLL.FireException(this, exc.Message);
+
+        }
+    }
+
+}

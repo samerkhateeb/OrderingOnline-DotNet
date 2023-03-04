@@ -1,0 +1,13 @@
+\Web\wwwroot\bin\PageCategories.dll
+\Web\wwwroot\bin\PageCategories.pdb
+\Web\wwwroot\Portals\PageCats\PageCategories\PageCategories\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Portals\PageCats\PageCategories\PageCategories\obj\Debug\PageCategories.dll
+\Web\wwwroot\Portals\PageCats\PageCategories\PageCategories\obj\Debug\PageCategories.pdb
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\PageCategories.dll
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\PageCategories.pdb
+\Web\wwwroot\bin\PageCategories.dll
+\Web\wwwroot\bin\PageCategories.pdb
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\PageCategories.dll
+\Web\wwwroot\Modules\PageCategories\PageCategories\PageCategories\obj\Debug\PageCategories.pdb

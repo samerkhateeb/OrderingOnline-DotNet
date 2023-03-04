@@ -1,0 +1,6 @@
+\Web\COT\COT\COT\obj\Debug\ResolveAssemblyReference.cache
+\Web\COT\COT\COT\bin\Debug\COT.dll.config
+\Web\COT\COT\COT\bin\Debug\COT.dll
+\Web\COT\COT\COT\bin\Debug\COT.pdb
+\Web\COT\COT\COT\obj\Debug\COT.dll
+\Web\COT\COT\COT\obj\Debug\COT.pdb

@@ -1,0 +1,5 @@
+\Web\KFGCMS.ConnectionManager\bin\Debug\KFGCMS.ConnectionManager.dll
+\Web\KFGCMS.ConnectionManager\bin\Debug\KFGCMS.ConnectionManager.pdb
+\Web\KFGCMS.ConnectionManager\obj\Debug\ResolveAssemblyReference.cache
+\Web\KFGCMS.ConnectionManager\obj\Debug\KFGCMS.ConnectionManager.dll
+\Web\KFGCMS.ConnectionManager\obj\Debug\KFGCMS.ConnectionManager.pdb

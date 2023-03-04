@@ -1,0 +1,15 @@
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\bin\HotNews.dll
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\bin\HotNews.pdb
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\bin\KFGCMS.BLL.dll
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\bin\Microsoft.ApplicationBlocks.Data.dll
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\bin\KFGCMS.BLL.pdb
+\Web\wwwroot\bin\HotNews.dll
+\Web\wwwroot\bin\HotNews.pdb
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\HotNews.dll
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\HotNews.pdb
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\ResolveAssemblyReference.cache
+\Web\wwwroot\bin\HotNews.dll
+\Web\wwwroot\bin\HotNews.pdb
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\HotNews.dll
+\Web\wwwroot\Modules\HotNews\HotNews\HotNews\obj\Debug\HotNews.pdb
